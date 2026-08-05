@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-manrope: 'Manrope', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+
+    --bg-primary: #FAFAF9;
+    --bg-secondary: #F5F5F4;
+    --bg-card: #FFFFFF;
+    --border: #E7E5E4;
+    --border-subtle: #F0EFED;
+    --text-primary: #0C0A09;
+    --text-secondary: #57534E;
+    --text-muted: #A8A29E;
+    --brand: #1258AB;
+  }
+
+  .dark {
+    --bg-primary: #141414;
+    --bg-secondary: #1C1C1C;
+    --bg-card: #1C1C1C;
+    --border: #2A2A2A;
+    --border-subtle: #232323;
+    --text-primary: #FAFAF9;
+    --text-secondary: #A8A29E;
+    --text-muted: #57534E;
+    --brand: #3B82F6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-inter), Inter, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #1258AB;
+    color: #ffffff;
+  }
+
+  .dark ::selection {
+    background-color: #3B82F6;
+    color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope), Manrope, sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-manrope), Manrope, sans-serif;
+  }
+
+  /* Subtle dot grid pattern */
+  .bg-dots {
+    background-image: radial-gradient(circle, #CBD5E115 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .dark .bg-dots {
+    background-image: radial-gradient(circle, #2A2A2A 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Very subtle line grid */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, #E7E5E408 1px, transparent 1px),
+      linear-gradient(to bottom, #E7E5E408 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .dark .bg-grid {
+    background-image:
+      linear-gradient(to right, #2A2A2A 1px, transparent 1px),
+      linear-gradient(to bottom, #2A2A2A 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* Text balance utility */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
