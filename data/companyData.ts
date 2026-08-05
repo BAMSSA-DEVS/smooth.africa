@@ -8,6 +8,7 @@ export interface Product {
   color: string;
   features: string[];
   linkText: string;
+  externalLink?: string;
 }
 
 export interface ValueItem {
@@ -91,6 +92,7 @@ export const companyData = {
         "Complete audit trail",
       ],
       linkText: "Learn More",
+      externalLink: "https://smoothballot.com/",
     },
     {
       id: "smoothticket",
@@ -108,6 +110,7 @@ export const companyData = {
         "Revenue & attendance analytics",
       ],
       linkText: "Learn More",
+      externalLink: "https://tickets.smooth.africa/",
     },
     {
       id: "future",

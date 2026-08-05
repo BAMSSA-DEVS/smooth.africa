@@ -145,13 +145,25 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
                 )}
 
                 {/* CTA */}
-                <button
-                  onClick={() => onSelectProduct(product)}
-                  className="mt-auto w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-stone-100 dark:border-[#2A2A2A] group-hover:border-stone-200 dark:group-hover:border-[#3A3A3A] text-[13px] font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
-                >
-                  <span>{product.linkText}</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </button>
+                {product.externalLink ? (
+                  <a
+                    href={product.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-stone-100 dark:border-[#2A2A2A] group-hover:border-stone-200 dark:group-hover:border-[#3A3A3A] text-[13px] font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
+                  >
+                    <span>{product.linkText}</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => onSelectProduct(product)}
+                    className="mt-auto w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-stone-100 dark:border-[#2A2A2A] group-hover:border-stone-200 dark:group-hover:border-[#3A3A3A] text-[13px] font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
+                  >
+                    <span>{product.linkText}</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+                )}
               </motion.div>
             );
           })}
