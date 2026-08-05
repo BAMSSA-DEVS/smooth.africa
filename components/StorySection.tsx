@@ -68,12 +68,13 @@ export const StorySection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.65, delay: 0.5 }}
-              className="mt-4 grid grid-cols-3 gap-4 pt-6 border-t border-stone-100 dark:border-[#2A2A2A]"
+              className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-stone-200 dark:border-stone-800 my-16"
             >
               {[
-                { num: '2020', label: 'Founded' },
+                { num: '2023', label: 'Founded' },
                 { num: 'Lagos', label: 'Headquarters' },
-                { num: '4+', label: 'Years building' },
+                { num: '3+', label: 'Years building' },
+                { num: '2', label: 'Core products' },
               ].map((item, i) => (
                 <div key={i} className="space-y-1">
                   <div className="font-heading font-bold text-xl text-stone-900 dark:text-stone-100">

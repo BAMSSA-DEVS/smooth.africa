@@ -65,9 +65,9 @@ export const companyData = {
   story: {
     title: "Our Story",
     paragraphs: [
-      "Smooth Africa started because we were frustrated. Not with the continent — with the way organizations on it were forced to operate. Paper forms. WhatsApp voice notes as approval workflows. Cash stored in envelopes. Spreadsheets shared on USB sticks. Everywhere we looked, talented people were spending enormous energy managing chaos that technology had already solved elsewhere.",
-      "We didn't start with a business model. We started with a question: what would it look like to build software specifically for how African businesses actually work — their realities, their constraints, their context? Not ported from Silicon Valley assumptions, but designed from the ground up for the teams using it.",
-      "Today, Smooth Africa builds focused digital products that replace operational friction with clarity. We believe great software should feel obvious — like it was always meant to exist. Every product we ship is an answer to a real problem someone showed us, explained to us, or complained about long enough for us to take seriously.",
+      "Smooth Africa started because we were frustrated. Not with the continent, but with the way organizations on it were forced to operate. Paper forms. WhatsApp voice notes as approval workflows. Cash stored in envelopes. Spreadsheets shared on USB sticks. Everywhere we looked, talented people were spending enormous energy managing chaos that technology had already solved elsewhere.",
+      "We didn't start with a business model. We started with a question: what would it look like to build software specifically for how African businesses actually work, considering their realities, their constraints, and their context? Not ported from Silicon Valley assumptions, but designed from the ground up for the teams using it.",
+      "Today, Smooth Africa builds focused digital products that replace operational friction with clarity. We believe great software should feel obvious, like it was always meant to exist. Every product we ship is an answer to a real problem someone showed us, explained to us, or complained about long enough for us to take seriously.",
     ],
   },
 
@@ -83,9 +83,10 @@ export const companyData = {
       color: "blue",
       features: [
         "Secure voter & candidate registration",
+        "Virtual voting system",
+        "Contest management",
         "Real-time results tabulation",
         "Complete audit trail",
-        "Offline-capable field operations",
       ],
       linkText: "Learn More",
     },
@@ -94,7 +95,7 @@ export const companyData = {
       name: "SmoothTicket",
       tagline: "Digital event ticketing and access management.",
       description:
-        "A complete ticketing platform for African events — handling secure ticket generation, real-time access control, and revenue analytics all in one place.",
+        "A complete ticketing platform for African events. It handles secure ticket generation, real-time access control, and revenue analytics all in one place.",
       status: "live" as const,
       iconName: "Ticket",
       color: "emerald",
@@ -133,7 +134,7 @@ export const companyData = {
       statement:
         "Design practical software that simplifies work, improves transparency, and enables organizations to grow confidently.",
       detail:
-        "Every product we build has to answer this: does it make the work genuinely easier? We hold that question over every feature, every screen, every decision. Elegance isn't aesthetic — it's functional.",
+        "Every product we build has to answer this: does it make the work genuinely easier? We hold that question over every feature, every screen, every decision. Elegance is not just aesthetic, it's functional.",
     },
   },
 
@@ -142,14 +143,14 @@ export const companyData = {
       id: "real-problems",
       title: "Build for Real Problems",
       statement:
-        "We create products because people genuinely need them — not because technology is trendy. Every product we've shipped started with someone explaining a problem that was costing them time, money, or sanity.",
+        "We create products because people genuinely need them, not because technology is trendy. Every product we've shipped started with someone explaining a problem that was costing them time, money, or sanity.",
       iconName: "Target",
     },
     {
       id: "simplicity",
       title: "Obsess Over Simplicity",
       statement:
-        "If software requires a manual, we haven't finished designing it. Simplicity isn't about removing features — it's about making every feature feel like it belongs exactly where it is.",
+        "If software requires a manual, we haven't finished designing it. Simplicity isn't about removing features, it's about making every feature feel like it belongs exactly where it is.",
       iconName: "Minimize2",
     },
     {
@@ -245,7 +246,7 @@ export const companyData = {
       categoryLabel: "Office",
       imageUrl:
         "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-      description: "Our main workspace in Victoria Island, Lagos — where most of the product work happens.",
+      description: "Our main workspace in Victoria Island, Lagos. This is where most of the product work happens.",
     },
     {
       id: "g2",
@@ -272,7 +273,7 @@ export const companyData = {
       categoryLabel: "Product Workshops",
       imageUrl:
         "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80",
-      description: "Co-design session with HR managers from 12 organizations — part of how we built SmoothTeam.",
+      description: "Co-design session with HR managers from 12 organizations. This is part of how we built SmoothTeam.",
     },
     {
       id: "g5",
@@ -290,7 +291,7 @@ export const companyData = {
       categoryLabel: "Behind the Scenes",
       imageUrl:
         "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80",
-      description: "A typical design review — messy whiteboards, strong opinions, good outcomes.",
+      description: "A typical design review featuring messy whiteboards, strong opinions, and good outcomes.",
     },
   ] as GalleryItem[],
 
@@ -307,7 +308,7 @@ export const companyData = {
     {
       id: "t1",
       quote:
-        "SmoothBallot saved us weeks of manual tallying. The audit trail alone was worth it — every stakeholder could see exactly what happened at every step.",
+        "SmoothBallot saved us weeks of manual tallying. The audit trail alone was worth it, as every stakeholder could see exactly what happened at every step.",
       name: "James Kiptoo",
       role: "Electoral Commission Secretary",
       company: "Kenya National Electoral Commission",

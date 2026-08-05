@@ -57,7 +57,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               transition={{ duration: 0.6, delay: 0.15 }}
             >
               Whether you need a product demo, want to discuss a partnership, or just have
-              a problem you haven't found software for — we'd like to hear from you.
+              a problem you haven't found software for, we'd like to hear from you.
             </motion.p>
 
             <motion.div

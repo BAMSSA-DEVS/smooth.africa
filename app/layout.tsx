@@ -17,7 +17,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Smooth Africa — Digital Products for African Organizations',
+  title: 'Smooth Africa - Digital Products for African Organizations',
   description:
     'Smooth Africa designs, builds, and scales software that helps businesses, governments, and communities operate more efficiently across Africa. Products: SmoothBallot, SmoothTeam, Afrixa.',
   keywords: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Smooth Africa', url: 'https://smooth.africa' }],
   metadataBase: new URL('https://smooth.africa'),
   openGraph: {
-    title: 'Smooth Africa — Digital Products for African Organizations',
+    title: 'Smooth Africa - Digital Products for African Organizations',
     description:
       'We design, build, and scale software that helps businesses, governments, and communities operate more efficiently across Africa.',
     url: 'https://smooth.africa',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Smooth Africa — Digital Products for African Organizations',
+    title: 'Smooth Africa - Digital Products for African Organizations',
     description:
       'We design, build, and scale software that helps businesses, governments, and communities operate more efficiently across Africa.',
   },
