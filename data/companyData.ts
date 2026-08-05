@@ -65,9 +65,11 @@ export const companyData = {
   story: {
     title: "Our Story",
     paragraphs: [
-      "Smooth Africa started because we were frustrated. Not with the continent, but with the way organizations on it were forced to operate. Paper forms. WhatsApp voice notes as approval workflows. Cash stored in envelopes. Spreadsheets shared on USB sticks. Everywhere we looked, talented people were spending enormous energy managing chaos that technology had already solved elsewhere.",
-      "We didn't start with a business model. We started with a question: what would it look like to build software specifically for how African businesses actually work, considering their realities, their constraints, and their context? Not ported from Silicon Valley assumptions, but designed from the ground up for the teams using it.",
-      "Today, Smooth Africa builds focused digital products that replace operational friction with clarity. We believe great software should feel obvious, like it was always meant to exist. Every product we ship is an answer to a real problem someone showed us, explained to us, or complained about long enough for us to take seriously.",
+      "Smooth Africa wasn't created to chase trends or build software for the sake of technology. It began with a simple observation: across Africa, talented people and ambitious organizations were spending too much time overcoming friction instead of creating value.",
+      "We kept asking ourselves a simple question: What if technology was designed around the realities of the people using it, rather than expecting people to adapt to the technology? That question became the foundation of everything we build.",
+      "From businesses managing daily operations to institutions serving communities, we saw the same pattern, important work slowed down by disconnected systems, manual processes, unnecessary complexity, and tools that weren't built for the environments they were meant to serve. We believed there had to be a better way.",
+      "Today, Smooth Africa builds practical digital products that simplify work, strengthen trust, and help organizations operate with greater confidence. Each product solves a specific problem, but they all share the same purpose: removing friction so people can focus on what matters most.",
+      "As new challenges emerge, we'll continue building new products. Our ambition isn't to become known for a single platform, it's to become the company people trust whenever meaningful problems need thoughtful technology.",
     ],
   },
 

@@ -35,7 +35,7 @@ export const StorySection: React.FC = () => {
             {/* Editorial pull quote */}
             <blockquote className="mt-8 pl-4 border-l-2 border-stone-200 dark:border-[#2A2A2A]">
               <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed italic">
-                "We didn't start with a business model. We started with a question."
+                "We didn't start with a business plan. We started with a question."
               </p>
             </blockquote>
           </motion.div>
