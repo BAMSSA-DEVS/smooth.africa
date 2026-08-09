@@ -11,7 +11,6 @@ import { TeamSection } from '@/components/TeamSection';
 import { GallerySection } from '@/components/GallerySection';
 import { NumbersSection } from '@/components/NumbersSection';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
-import { PartnersSection } from '@/components/PartnersSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { DemoModal } from '@/components/DemoModal';
@@ -55,9 +54,6 @@ export default function Home() {
 
         {/* 9. Testimonials */}
         <TestimonialsSection />
-
-        {/* 10. Partners */}
-        <PartnersSection />
 
         {/* 11. Contact / CTA */}
         <ContactSection onOpenDemoModal={() => setDemoModalOpen(true)} />

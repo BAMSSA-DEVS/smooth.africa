@@ -47,19 +47,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
           {/* ─── Left Column ─── */}
           <div className="lg:col-span-6 xl:col-span-5 space-y-8">
 
-            {/* Label pill */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0}
-            >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-200 dark:border-[#2A2A2A] bg-white/80 dark:bg-[#1C1C1C]/50 backdrop-blur-sm text-xs font-semibold text-stone-500 dark:text-stone-400 tracking-wide">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1258AB] shrink-0" />
-                African Technology Company
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.div
               variants={fadeUp}
