@@ -129,11 +129,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
           >
-            <img 
-              src="/hero-map.png" 
-              alt="Africa Map Dashboard" 
-              className="w-full h-auto object-contain drop-shadow-2xl rounded-2xl"
-            />
+            <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center">
+              {/* Fade out the left edge to blend with the background */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#FAFAF9] dark:from-[#141414] via-transparent to-transparent w-1/3" />
+              
+              <img 
+                src="/hero-map.png" 
+                alt="Africa Map Dashboard" 
+                className="w-full h-full object-cover md:object-contain object-right opacity-90 dark:mix-blend-lighten pointer-events-none"
+                style={{
+                  maskImage: 'linear-gradient(to left, black 70%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%)'
+                }}
+              />
+            </div>
           </motion.div>
 
         </div>
