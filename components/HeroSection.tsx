@@ -21,24 +21,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-20 pb-24 overflow-hidden bg-[#FAFAF9] dark:bg-[#060D1A]"
+      className="relative min-h-screen flex items-center pt-20 pb-24 overflow-hidden bg-[#060D1A]"
     >
       {/* Background Image Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex justify-end">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAF9] dark:from-[#060D1A] via-[#FAFAF9]/90 dark:via-[#060D1A]/90 to-transparent w-full lg:w-[55%] z-10" />
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAFAF9] dark:from-[#060D1A] to-transparent h-32 z-10" />
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <img 
-          src="/hero-map.png" 
+          src="/hero-bg.jpg" 
           alt="Africa Map Background" 
-          className="w-full lg:w-[85%] h-full object-cover object-right opacity-100 dark:opacity-90 dark:mix-blend-screen"
+          className="w-full h-full object-cover object-right"
         />
+        {/* Gradient overlay to ensure text readability on smaller screens */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060D1A] via-[#060D1A]/80 to-transparent w-full md:w-[60%]" />
       </div>
-
-      {/* Subtle dot grid background */}
-      <div className="absolute inset-0 bg-dots opacity-100 dark:opacity-30 pointer-events-none z-0" />
-
-      {/* Very subtle warm gradient wash — only in light mode */}
-      <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-gradient-to-bl from-[#1258AB]/5 via-transparent to-transparent pointer-events-none dark:hidden z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -53,7 +47,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               animate="visible"
               custom={0}
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-200 dark:border-[#2A2A2A] bg-white dark:bg-[#1C1C1C] text-xs font-semibold text-stone-500 dark:text-stone-400 tracking-wide">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#2A2A2A] bg-[#1C1C1C]/50 backdrop-blur-sm text-xs font-semibold text-stone-400 tracking-wide">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#1258AB] shrink-0" />
                 African Technology Company
               </span>
@@ -66,7 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               animate="visible"
               custom={0.1}
             >
-              <h1 className="font-heading text-[2.6rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-extrabold leading-[1.08] tracking-tight text-stone-900 dark:text-stone-100 text-balance">
+              <h1 className="font-heading text-[2.6rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-extrabold leading-[1.08] tracking-tight text-stone-100 text-balance">
                 Building Africa's Next Generation of{' '}
                 <span className="text-[#1258AB]">Digital Products.</span>
               </h1>
@@ -78,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               initial="hidden"
               animate="visible"
               custom={0.2}
-              className="text-lg text-stone-500 dark:text-stone-400 leading-relaxed max-w-lg"
+              className="text-lg text-stone-400 leading-relaxed max-w-lg"
             >
               We design, build, and scale software that helps businesses, governments,
               and communities operate more efficiently across Africa.
@@ -101,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               </a>
               <button
                 onClick={onOpenDemoModal}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-white dark:bg-[#1C1C1C] hover:border-stone-300 dark:hover:border-[#3A3A3A] text-stone-800 dark:text-stone-200 font-semibold text-[15px] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[#2A2A2A] bg-[#1C1C1C]/50 backdrop-blur-sm hover:border-[#3A3A3A] hover:bg-[#232323] text-stone-200 font-semibold text-[15px] transition-all"
               >
                 <MessageSquare className="w-4 h-4 text-[#1258AB] dark:text-blue-400" />
                 Talk to Us
@@ -114,20 +108,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               initial="hidden"
               animate="visible"
               custom={0.4}
-              className="pt-2 flex items-center gap-6 text-sm text-stone-400 dark:text-stone-500"
+              className="pt-2 flex items-center gap-6 text-sm text-stone-400"
             >
               <div className="flex items-center gap-2">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">120+</span>
+                <span className="font-heading font-bold text-stone-100 text-lg">120+</span>
                 <span>organizations</span>
               </div>
-              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
+              <div className="w-px h-5 bg-[#2A2A2A]" />
               <div className="flex items-center gap-2">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">8</span>
+                <span className="font-heading font-bold text-stone-100 text-lg">8</span>
                 <span>countries</span>
               </div>
-              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
+              <div className="w-px h-5 bg-[#2A2A2A]" />
               <div className="flex items-center gap-2">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">3</span>
+                <span className="font-heading font-bold text-stone-100 text-lg">3</span>
                 <span>products</span>
               </div>
             </motion.div>
