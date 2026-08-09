@@ -21,13 +21,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-20 pb-24 overflow-hidden bg-[#FAFAF9] dark:bg-[#141414]"
+      className="relative min-h-screen flex items-center pt-20 pb-24 overflow-hidden bg-[#FAFAF9] dark:bg-[#060D1A]"
     >
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none flex justify-end">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAF9] dark:from-[#060D1A] via-[#FAFAF9]/90 dark:via-[#060D1A]/90 to-transparent w-full lg:w-[55%] z-10" />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAFAF9] dark:from-[#060D1A] to-transparent h-32 z-10" />
+        <img 
+          src="/hero-map.png" 
+          alt="Africa Map Background" 
+          className="w-full lg:w-[85%] h-full object-cover object-right opacity-100 dark:opacity-90 dark:mix-blend-screen"
+        />
+      </div>
+
       {/* Subtle dot grid background */}
-      <div className="absolute inset-0 bg-dots opacity-100 dark:opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-dots opacity-100 dark:opacity-30 pointer-events-none z-0" />
 
       {/* Very subtle warm gradient wash — only in light mode */}
-      <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-gradient-to-bl from-[#1258AB]/5 via-transparent to-transparent pointer-events-none dark:hidden" />
+      <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-gradient-to-bl from-[#1258AB]/5 via-transparent to-transparent pointer-events-none dark:hidden z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -121,29 +132,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               </div>
             </motion.div>
           </div>
-
-          {/* ─── Right Column — Product Dashboard Visual ─── */}
-          <motion.div
-            className="lg:col-span-6 xl:col-span-7 relative"
-            initial={{ opacity: 0, scale: 0.97, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
-          >
-            <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center">
-              {/* Fade out the left edge to blend with the background */}
-              <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#FAFAF9] dark:from-[#141414] via-transparent to-transparent w-1/3" />
-              
-              <img 
-                src="/hero-map.png" 
-                alt="Africa Map Dashboard" 
-                className="w-full h-full object-cover md:object-contain object-right opacity-90 dark:mix-blend-lighten pointer-events-none"
-                style={{
-                  maskImage: 'linear-gradient(to left, black 70%, transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%)'
-                }}
-              />
-            </div>
-          </motion.div>
 
         </div>
       </div>
