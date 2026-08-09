@@ -302,11 +302,10 @@ export const companyData = {
 
   metrics: [
     { id: "m1", label: "Products Built", value: 2, suffix: "" },
-    { id: "m2", label: "Organizations Served", value: 120, suffix: "+" },
-    { id: "m3", label: "Countries Reached", value: 8, suffix: "" },
+    { id: "m2", label: "Organizations Served", value: 100, suffix: "+" },
+    { id: "m3", label: "Countries Reached", value: 1, suffix: "" },
     { id: "m4", label: "Active Users", value: 15000, suffix: "+" },
-    { id: "m5", label: "Projects Delivered", value: 47, suffix: "" },
-    { id: "m6", label: "Years Building", value: 4, suffix: "" },
+    { id: "m6", label: "Years Building", value: 3, suffix: "+" },
   ] as MetricItem[],
 
   testimonials: [

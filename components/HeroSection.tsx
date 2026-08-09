@@ -118,13 +118,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               className="pt-2 flex items-center gap-6 text-sm text-stone-500 dark:text-stone-400"
             >
               <div className="flex items-center gap-2">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">120+</span>
+                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">100+</span>
                 <span>organizations</span>
               </div>
               <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
               <div className="flex items-center gap-2">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">8</span>
-                <span>countries</span>
+                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">1</span>
+                <span>country</span>
               </div>
               <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
               <div className="flex items-center gap-2">
