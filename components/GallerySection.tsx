@@ -10,12 +10,10 @@ interface GallerySectionProps {
 
 const CATEGORIES = [
   { id: 'all', label: 'All' },
-  { id: 'office', label: 'Office' },
   { id: 'team', label: 'Team' },
-  { id: 'launches', label: 'Launches' },
-  { id: 'workshops', label: 'Workshops' },
+  { id: 'events', label: 'Events' },
   { id: 'community', label: 'Community' },
-  { id: 'behind-scenes', label: 'Behind the Scenes' },
+  { id: 'milestones', label: 'Milestones' },
 ];
 
 export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage }) => {
