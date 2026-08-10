@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
             <img 
               src="/logo-dark.png" 
               alt="Smooth Africa Logo" 
-              className="hidden dark:block h-8 w-auto object-contain transition-transform group-hover:scale-105"
+              className="hidden dark:block h-10 w-auto object-contain transition-transform group-hover:scale-105 mix-blend-screen -ml-1"
             />
           </a>
 
