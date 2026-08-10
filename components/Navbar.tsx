@@ -52,12 +52,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
             className="flex items-center gap-2.5 group shrink-0"
             aria-label="Smooth Africa Home"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#1258AB] flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-              <span className="text-white font-heading font-bold text-sm leading-none">S</span>
+            {/* Light Mode Logo */}
+            <div className="flex items-center gap-2.5 dark:hidden">
+              <div className="w-8 h-8 rounded-lg bg-[#1258AB] flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
+                <span className="text-white font-heading font-bold text-sm leading-none">S</span>
+              </div>
+              <span className="font-heading font-bold text-[15px] tracking-tight text-stone-900">
+                smooth<span className="text-[#1258AB]">.africa</span>
+              </span>
             </div>
-            <span className="font-heading font-bold text-[15px] tracking-tight text-stone-900 dark:text-stone-100">
-              smooth<span className="text-[#1258AB]">.africa</span>
-            </span>
+            {/* Dark Mode Logo */}
+            <img 
+              src="/logo-dark.png" 
+              alt="Smooth Africa Logo" 
+              className="hidden dark:block h-8 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Nav */}
