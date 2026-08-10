@@ -312,32 +312,42 @@ export const companyData = {
     {
       id: "t1",
       quote:
-        "SmoothBallot saved us weeks of manual tallying. The audit trail alone was worth it, as every stakeholder could see exactly what happened at every step.",
-      name: "James Kiptoo",
-      role: "Electoral Commission Secretary",
-      company: "Kenya National Electoral Commission",
+        "It is a very reliable voting platform, their team was on standby and always available for communication. I believe smoothballot is the best voting platform I have seen so far.",
+      name: "Kelvin Omachonu",
+      role: "Electoral Commission Chairman",
+      company: "KREIC",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+        "https://ui-avatars.com/api/?name=Kelvin+Omachonu&background=0D8ABC&color=fff&size=200",
     },
     {
       id: "t2",
       quote:
-        "SmoothTicket eliminated ticket fraud at our annual conference entirely. The scanners synced instantly even when the venue WiFi was spotty.",
-      name: "Ngozi Adeyemi",
-      role: "Events Director",
-      company: "Lagos Tech Summit",
+        "We say a very big thank you to smoothballot for making the journey of our election easy...",
+      name: "ISBHECO",
+      role: "Independent Electoral Committee",
+      company: "Sultan Bello Hall",
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
+        "https://ui-avatars.com/api/?name=ISBHECO&background=F59E0B&color=fff&size=200",
     },
     {
       id: "t3",
       quote:
-        "The level of support and reliability we get from Smooth Africa is unmatched. We run our entire operational workflow through their platforms.",
-      name: "Samuel Owusu",
-      role: "Managing Director",
-      company: "Owusu Group",
+        "Like the name smoothballot, I would say it is very smooth. The user experience and navigation was smooth. I could easily set up the election without technical support",
+      name: "Daniel Anya",
+      role: "Electoral Commission Chairman",
+      company: "NSASA",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+        "https://ui-avatars.com/api/?name=Daniel+Anya&background=10B981&color=fff&size=200",
+    },
+    {
+      id: "t4",
+      quote:
+        "It was fast and seamless, I will recommend smoothballot to my friends, other departments, to Africa and to the WORLD!!",
+      name: "Ayoleke Oreoluwa",
+      role: "Committee Member",
+      company: "KREIC",
+      image:
+        "https://ui-avatars.com/api/?name=Ayoleke+Oreoluwa&background=8B5CF6&color=fff&size=200",
     },
   ] as TestimonialItem[],
 
