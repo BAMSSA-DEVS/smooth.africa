@@ -284,6 +284,30 @@ export const companyData = {
       imageUrl: "/gallery/img5.jpg",
       description: "Celebrating the disbursement of over N2,000,000 via Smooth contests.",
     },
+    {
+      id: "g6",
+      title: "Award of Recognition",
+      category: "milestones" as const,
+      categoryLabel: "Milestones",
+      imageUrl: "/gallery/img6.jpg",
+      description: "Recognized as Brand of the Year.",
+    },
+    {
+      id: "g7",
+      title: "Charity Allocation",
+      category: "community" as const,
+      categoryLabel: "Community",
+      imageUrl: "/gallery/img7.jpg",
+      description: "N120,000 donation to the Chrysolite Educational and Empowerment Foundation.",
+    },
+    {
+      id: "g8",
+      title: "Team Outing",
+      category: "team" as const,
+      categoryLabel: "Team",
+      imageUrl: "/gallery/img8.jpg",
+      description: "Team members gathered at a recent tech event.",
+    },
   ] as GalleryItem[],
 
   metrics: [
