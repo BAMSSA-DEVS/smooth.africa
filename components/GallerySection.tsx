@@ -76,51 +76,58 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
           ))}
         </motion.div>
 
-        {/* Gallery Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-          layout
-        >
-          {filtered.map((item, i) => (
-            <motion.button
-              key={item.id}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-stone-100 dark:bg-[#2A2A2A] cursor-pointer text-left"
-              onClick={() => onSelectImage(item)}
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.97 }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
-              layout
-            >
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-500"
-                loading="lazy"
-              />
+        {/* Horizontal Marquee Wrapper */}
+        <div className="relative w-full overflow-hidden mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <motion.div
+            className="flex gap-4 w-max"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              duration: 25,
+              ease: 'linear',
+              repeat: Infinity,
+            }}
+          >
+            {[...filtered, ...filtered].map((item, i) => (
+              <motion.button
+                key={`${item.id}-${i}`}
+                className="group relative rounded-2xl overflow-hidden w-64 sm:w-72 md:w-80 shrink-0 aspect-[3/4] bg-stone-100 dark:bg-[#2A2A2A] cursor-pointer text-left"
+                onClick={() => onSelectImage(item)}
+                whileHover={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+              >
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Permanent subtle gradient for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent pointer-events-none" />
 
-              {/* Info — shown on hover */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[11px] font-semibold uppercase tracking-widest text-stone-300">
-                  {item.categoryLabel}
-                </span>
-                <p className="font-heading font-bold text-white text-sm mt-0.5 line-clamp-1">
-                  {item.title}
-                </p>
-              </div>
+                {/* Info — always visible at bottom left */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
+                    <p className="font-heading font-bold text-white text-base md:text-lg tracking-tight line-clamp-1">
+                      {item.title}
+                    </p>
+                  </div>
+                  <span className="text-xs font-medium text-stone-300 ml-3.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click to view
+                  </span>
+                </div>
 
-              {/* Category pill — always visible */}
-              <div className="absolute top-3 left-3">
-                <span className="px-2.5 py-1 rounded-full bg-white/90 dark:bg-[#1C1C1C]/90 backdrop-blur-sm text-[11px] font-semibold text-stone-700 dark:text-stone-300 border border-white/50 dark:border-[#2A2A2A]">
-                  {item.categoryLabel}
-                </span>
-              </div>
-            </motion.button>
-          ))}
-        </motion.div>
+                {/* Category pill — hidden to match the clean aesthetic of the mockup, or can be kept top right */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-semibold text-white border border-white/30">
+                    {item.categoryLabel}
+                  </span>
+                </div>
+              </motion.button>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
