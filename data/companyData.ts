@@ -268,14 +268,7 @@ export const companyData = {
       imageUrl: "/gallery/img3.jpg",
       description: "The team unwinding and sharing ideas over drinks.",
     },
-    {
-      id: "g4",
-      title: "Tech and You Fest",
-      category: "events" as const,
-      categoryLabel: "Events",
-      imageUrl: "/gallery/img4.jpg",
-      description: "Connecting with the tech community at the Tech and You event.",
-    },
+
     {
       id: "g5",
       title: "Milestone Celebration",
@@ -292,14 +285,7 @@ export const companyData = {
       imageUrl: "/gallery/img6.jpg",
       description: "Recognized as Brand of the Year.",
     },
-    {
-      id: "g7",
-      title: "Charity Allocation",
-      category: "community" as const,
-      categoryLabel: "Community",
-      imageUrl: "/gallery/img7.jpg",
-      description: "N120,000 donation to the Chrysolite Educational and Empowerment Foundation.",
-    },
+
     {
       id: "g8",
       title: "Team Outing",
