@@ -9,18 +9,8 @@ interface ContactSectionProps {
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal }) => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
-      setEmail('');
-    }
-  };
 
   return (
     <section
@@ -127,54 +117,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               </div>
             </motion.div>
           </div>
-
-          {/* Right — Newsletter */}
-          <motion.div
-            className="lg:col-span-5"
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.65, delay: 0.2 }}
-          >
-            <div className="rounded-2xl border border-stone-200 dark:border-[#2A2A2A] bg-white dark:bg-[#1C1C1C] p-7 space-y-5">
-              <div>
-                <h3 className="font-heading font-bold text-lg text-stone-900 dark:text-stone-100">
-                  Stay in the loop
-                </h3>
-                <p className="text-stone-500 dark:text-stone-400 text-sm mt-1">
-                  Product updates, company news, and things we find interesting. No more than once a month.
-                </p>
-              </div>
-
-              {submitted ? (
-                <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20">
-                  <span className="text-emerald-600 dark:text-emerald-400 text-sm font-semibold">
-                    ✓ You're subscribed. Thank you.
-                  </span>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-[#FAFAF9] dark:bg-[#141414] text-stone-900 dark:text-stone-100 text-sm placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#1258AB]/30 focus:border-[#1258AB]/50 transition-all"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full px-4 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 hover:bg-stone-700 dark:hover:bg-stone-200 text-white dark:text-stone-900 text-sm font-semibold transition-all"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              )}
-
-              <p className="text-[11px] text-stone-400 dark:text-stone-500">
-                No spam. Unsubscribe anytime.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

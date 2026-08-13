@@ -294,6 +294,30 @@ export const companyData = {
       imageUrl: "/gallery/img8.jpg",
       description: "Team members gathered at a recent tech event.",
     },
+    {
+      id: "g9",
+      title: "2025 Year in Review",
+      category: "milestones" as const,
+      categoryLabel: "Milestones",
+      imageUrl: "/gallery/img9.jpg",
+      description: "Celebrating our Wrapped 2025 impact.",
+    },
+    {
+      id: "g10",
+      title: "Tech and You Fest",
+      category: "events" as const,
+      categoryLabel: "Events",
+      imageUrl: "/gallery/img10.jpg",
+      description: "Representing Smooth Africa at the Tech and You event.",
+    },
+    {
+      id: "g11",
+      title: "HEI Innovation Speaker",
+      category: "events" as const,
+      categoryLabel: "Events",
+      imageUrl: "/gallery/img11.jpg",
+      description: "Speaking on innovation and scaling tech products.",
+    },
   ] as GalleryItem[],
 
   metrics: [
