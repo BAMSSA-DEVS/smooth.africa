@@ -13,7 +13,7 @@ const navLinks = [
   { name: 'Products', href: '#products' },
   { name: 'About', href: '#story' },
   { name: 'Team', href: '#team' },
-  { name: 'Gallery', href: '#gallery' },
+  { name: 'Life at Smooth', href: '#gallery' },
   { name: 'Contact', href: '#contact' },
 ];
 

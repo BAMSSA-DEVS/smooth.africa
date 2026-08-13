@@ -68,8 +68,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               custom={0.2}
               className="text-lg text-stone-500 dark:text-stone-400 leading-relaxed max-w-lg"
             >
-              We design, build, and scale software that helps businesses, governments,
-              and communities operate more efficiently across Africa.
+              Smooth Africa builds focused digital products that help organizations work better, make better decisions, and create better experiences.
             </motion.p>
 
             {/* CTAs */}
@@ -92,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-white/80 dark:bg-[#1C1C1C]/50 backdrop-blur-sm hover:border-stone-300 dark:hover:border-[#3A3A3A] hover:bg-white dark:hover:bg-[#232323] text-stone-800 dark:text-stone-200 font-semibold text-[15px] transition-all"
               >
                 <MessageSquare className="w-4 h-4 text-[#1258AB] dark:text-blue-400" />
-                Talk to Us
+                Meet Smooth Africa
               </button>
             </motion.div>
 
@@ -110,8 +109,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               </div>
               <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
               <div className="flex items-center gap-2">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">1</span>
-                <span>country</span>
+                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">Growing</span>
+                <span>Across Africa</span>
               </div>
               <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
               <div className="flex items-center gap-2">

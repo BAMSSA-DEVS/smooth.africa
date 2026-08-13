@@ -61,7 +61,7 @@ export const NumbersSection: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            By the Numbers
+            Impact
           </motion.span>
           <motion.h2
             className="font-heading mt-3 text-3xl sm:text-4xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight"
@@ -69,7 +69,7 @@ export const NumbersSection: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.08 }}
           >
-            Progress we can point to.
+            We're already in motion.
           </motion.h2>
         </div>
 

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
+import { PositioningSection } from '@/components/PositioningSection';
 import { StorySection } from '@/components/StorySection';
 import { ProductsSection } from '@/components/ProductsSection';
 import { VisionMissionSection } from '@/components/VisionMissionSection';
@@ -10,6 +11,7 @@ import { ValuesSection } from '@/components/ValuesSection';
 import { TeamSection } from '@/components/TeamSection';
 import { GallerySection } from '@/components/GallerySection';
 import { NumbersSection } from '@/components/NumbersSection';
+import { WhatsNextSection } from '@/components/WhatsNextSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { DemoModal } from '@/components/DemoModal';
@@ -29,6 +31,9 @@ export default function Home() {
       <main className="flex-grow">
         {/* 1. Hero */}
         <HeroSection onOpenDemoModal={() => setDemoModalOpen(true)} />
+
+        {/* 1.5 Positioning */}
+        <PositioningSection />
 
         {/* 2. Our Story */}
         <StorySection />
@@ -50,6 +55,9 @@ export default function Home() {
 
         {/* 8. Social Proof — Numbers */}
         <NumbersSection />
+
+        {/* 10. What's Next */}
+        <WhatsNextSection />
 
         {/* 11. Contact / CTA */}
         <ContactSection onOpenDemoModal={() => setDemoModalOpen(true)} />

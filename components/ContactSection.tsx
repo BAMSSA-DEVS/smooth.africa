@@ -36,7 +36,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.08 }}
             >
-              Let's build the future together.
+              Have a problem worth solving?
             </motion.h2>
 
             <motion.p
@@ -45,8 +45,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              Whether you need a product demo, want to discuss a partnership, or just have
-              a problem you haven't found software for, we'd like to hear from you.
+              Tell us what you're trying to build, fix, or improve. We might already have a product for it—or we might build one.
             </motion.p>
 
             <motion.div
@@ -59,15 +58,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
                 onClick={onOpenDemoModal}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-[15px] shadow-sm hover:shadow-md transition-all group"
               >
-                Book a Demo
+                Talk to Smooth Africa
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
               <a
-                href="mailto:hello@smooth.africa"
+                href="#products"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-white dark:bg-[#1C1C1C] hover:border-stone-300 dark:hover:border-[#3A3A3A] text-stone-800 dark:text-stone-200 font-semibold text-[15px] transition-all"
               >
-                <Mail className="w-4 h-4 text-[#1258AB] dark:text-blue-400" />
-                Contact Us
+                Explore Products
               </a>
             </motion.div>
 

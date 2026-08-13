@@ -66,11 +66,9 @@ export const companyData = {
   story: {
     title: "Our Story",
     paragraphs: [
-      "Smooth Africa wasn't created to chase trends or build software for the sake of technology. It began with a simple observation: across Africa, talented people and ambitious organizations were spending too much time overcoming friction instead of creating value.",
-      "We kept asking ourselves a simple question: What if technology was designed around the realities of the people using it, rather than expecting people to adapt to the technology? That question became the foundation of everything we build.",
-      "From businesses managing daily operations to institutions serving communities, we saw the same pattern, important work slowed down by disconnected systems, manual processes, unnecessary complexity, and tools that weren't built for the environments they were meant to serve. We believed there had to be a better way.",
-      "Today, Smooth Africa builds practical digital products that simplify work, strengthen trust, and help organizations operate with greater confidence. Each product solves a specific problem, but they all share the same purpose: removing friction so people can focus on what matters most.",
-      "As new challenges emerge, we'll continue building new products. Our ambition isn't to become known for a single platform, it's to become the company people trust whenever meaningful problems need thoughtful technology.",
+      "Smooth Africa began from frustration with the unnecessary friction people and organizations encounter when technology doesn't reflect their reality.",
+      "We didn't start with a business plan. We started with a question: What if technology was designed around the realities of the people using it, rather than expecting people to adapt to the technology? That question became the foundation of everything we build.",
+      "Today, Smooth Africa builds practical digital products that simplify work, strengthen trust, and help organizations operate with greater confidence. As new challenges emerge, we'll continue building products intended to become useful infrastructure.",
     ],
   },
 
@@ -134,17 +132,13 @@ export const companyData = {
   visionMission: {
     vision: {
       title: "Vision",
-      statement:
-        "Empowering Africa through technology that removes friction from everyday operations.",
-      detail:
-        "We see a continent where the quality of your software doesn't determine whether your organization succeeds. Where small businesses run with the same operational clarity as large enterprises. Where paper and guesswork are replaced by systems that just work.",
+      statement: "A future where great technology is built around Africa's realities, not around assumptions made elsewhere.",
+      detail: "We see a continent where the quality of your software doesn't determine whether your organization succeeds. Where paper and guesswork are replaced by systems that just work.",
     },
     mission: {
       title: "Mission",
-      statement:
-        "Design practical software that simplifies work, improves transparency, and enables organizations to grow confidently.",
-      detail:
-        "Every product we build has to answer this: does it make the work genuinely easier? We hold that question over every feature, every screen, every decision. Elegance is not just aesthetic, it's functional.",
+      statement: "We build practical digital products that solve meaningful problems and make complex experiences simpler.",
+      detail: "Every product we build has to answer this: does it make the work genuinely easier? We hold that question over every feature, every screen, every decision.",
     },
   },
 
@@ -326,9 +320,8 @@ export const companyData = {
   ] as GalleryItem[],
 
   metrics: [
-    { id: "m1", label: "Products Built", value: 2, suffix: "" },
+    { id: "m1", label: "Products Built", value: 3, suffix: "" },
     { id: "m2", label: "Organizations Served", value: 100, suffix: "+" },
-    { id: "m3", label: "Countries Reached", value: 1, suffix: "" },
     { id: "m4", label: "Active Users", value: 15000, suffix: "+" },
     { id: "m6", label: "Years Building", value: 3, suffix: "+" },
   ] as MetricItem[],

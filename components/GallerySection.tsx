@@ -36,21 +36,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
 
         {/* Header */}
         <div ref={ref} className="mb-10">
-          <motion.span
-            className="text-xs font-semibold uppercase tracking-widest text-[#1258AB] dark:text-blue-400"
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            Gallery
-          </motion.span>
           <motion.h2
             className="font-heading mt-3 text-3xl sm:text-4xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight"
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.08 }}
           >
-            Inside Smooth Africa.
+            Life at Smooth
           </motion.h2>
         </div>
 

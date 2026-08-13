@@ -168,6 +168,19 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
             );
           })}
         </div>
+
+        {/* Future Block */}
+        <motion.div
+          className="mt-16 max-w-2xl text-left"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h4 className="font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2">And we're not done.</h4>
+          <p className="text-stone-500 dark:text-stone-400 text-[15px] leading-relaxed">
+            We're constantly exploring new problems worth solving. Some ideas become products. Others teach us what to build next.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
