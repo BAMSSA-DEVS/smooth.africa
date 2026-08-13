@@ -18,10 +18,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
       className="py-24 bg-[#FAFAF9] dark:bg-[#141414] border-t border-stone-100 dark:border-[#2A2A2A]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
-          {/* Left — CTA */}
-          <div className="lg:col-span-7 space-y-6">
+        <div ref={ref} className="flex flex-col items-center text-center max-w-3xl mx-auto">
+          {/* CTA Content */}
+          <div className="space-y-6 flex flex-col items-center">
             <motion.span
               className="text-xs font-semibold uppercase tracking-widest text-[#1258AB] dark:text-blue-400"
               initial={{ opacity: 0, y: 16 }}
@@ -41,7 +40,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
             </motion.h2>
 
             <motion.p
-              className="text-stone-500 dark:text-stone-400 text-lg leading-relaxed max-w-lg"
+              className="text-stone-500 dark:text-stone-400 text-lg leading-relaxed max-w-lg mx-auto"
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 }}
@@ -51,7 +50,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 pt-2"
+              className="flex flex-col sm:flex-row gap-3 pt-2 justify-center w-full"
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.22 }}
@@ -74,7 +73,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
 
             {/* Info rows */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-6 pt-4"
+              className="flex flex-col sm:flex-row gap-6 pt-4 justify-center text-left"
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
