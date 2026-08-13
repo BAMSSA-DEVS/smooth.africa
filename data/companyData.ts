@@ -87,12 +87,29 @@ export const companyData = {
       features: [
         "Secure voter & candidate registration",
         "Virtual voting system",
-        "Contest management",
         "Real-time results tabulation",
         "Complete audit trail",
       ],
       linkText: "Learn More",
       externalLink: "https://smoothballot.com/",
+    },
+    {
+      id: "smoothcontest",
+      name: "SmoothContest",
+      tagline: "Digital contest and pageant management.",
+      description:
+        "A dedicated platform for managing digital contests, awards, and pageants. Easily register contestants, collect votes securely, and showcase real-time leaderboards.",
+      status: "live" as const,
+      iconName: "Trophy",
+      color: "amber",
+      features: [
+        "Contestant registration & profiles",
+        "Secure voting mechanisms",
+        "Real-time leaderboards",
+        "Fraud prevention & analytics",
+      ],
+      linkText: "Learn More",
+      externalLink: "#",
     },
     {
       id: "smoothticket",
@@ -111,18 +128,6 @@ export const companyData = {
       ],
       linkText: "Learn More",
       externalLink: "https://tickets.smooth.africa/",
-    },
-    {
-      id: "future",
-      name: "Next Product",
-      tagline: "Something new is coming.",
-      description:
-        "We're working on something we can't talk about yet. If you have a genuine operational problem you haven't found good software for, we'd genuinely like to hear about it.",
-      status: "coming-soon" as const,
-      iconName: "Sparkles",
-      color: "slate",
-      features: [],
-      linkText: "Get Notified",
     },
   ] as Product[],
 
