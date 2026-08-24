@@ -40,19 +40,16 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 space-y-5">
             <a href="#hero" className="flex items-center gap-2.5 group w-fit" aria-label="Smooth Africa Home">
               {/* Light Mode Logo */}
-              <div className="flex items-center gap-2.5 dark:hidden">
-                <div className="w-8 h-8 rounded-lg bg-[#1258AB] flex items-center justify-center shadow-sm">
-                  <span className="text-white font-heading font-bold text-sm">S</span>
-                </div>
-                <span className="font-heading font-bold text-[15px] tracking-tight text-stone-900">
-                  smooth<span className="text-[#1258AB]">.africa</span>
-                </span>
-              </div>
+              <img 
+                src="/logo-light.png" 
+                alt="Smooth Africa Logo" 
+                className="dark:hidden w-[125px] sm:w-[135px] lg:w-[150px] h-auto object-contain transition-transform group-hover:opacity-90"
+              />
               {/* Dark Mode Logo */}
               <img 
                 src="/logo-dark.png" 
                 alt="Smooth Africa Logo" 
-                className="hidden dark:block h-10 w-auto object-contain transition-transform group-hover:scale-105 mix-blend-screen -ml-1"
+                className="hidden dark:block w-[125px] sm:w-[135px] lg:w-[150px] h-auto object-contain transition-transform group-hover:opacity-90"
               />
             </a>
 
