@@ -49,7 +49,7 @@ export const NumbersSection: React.FC = () => {
   return (
     <section
       id="numbers"
-      className="py-24 bg-white dark:bg-[#1C1C1C] border-t border-stone-100 dark:border-[#2A2A2A]"
+      className="py-24 bg-white dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -74,11 +74,11 @@ export const NumbersSection: React.FC = () => {
         </div>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-stone-100 dark:bg-[#2A2A2A] rounded-2xl overflow-hidden border border-stone-100 dark:border-[#2A2A2A]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-stone-100 dark:bg-[#101524] rounded-2xl overflow-hidden border border-stone-100 dark:border-[#101524]">
           {metrics.map((metric, i) => (
             <motion.div
               key={metric.id}
-              className="bg-white dark:bg-[#1C1C1C] px-6 py-8 flex flex-col gap-2"
+              className="bg-white dark:bg-[#070B16] px-6 py-8 flex flex-col gap-2"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 + i * 0.07 }}

@@ -12,7 +12,7 @@ export const StorySection: React.FC = () => {
   return (
     <section
       id="story"
-      className="py-24 bg-white dark:bg-[#1C1C1C] border-t border-stone-100 dark:border-[#2A2A2A]"
+      className="py-24 bg-white dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
@@ -33,7 +33,7 @@ export const StorySection: React.FC = () => {
             <div className="mt-6 w-8 h-[3px] rounded-full bg-[#1258AB]" />
 
             {/* Editorial pull quote */}
-            <blockquote className="mt-8 pl-4 border-l-2 border-stone-200 dark:border-[#2A2A2A]">
+            <blockquote className="mt-8 pl-4 border-l-2 border-stone-200 dark:border-[#101524]">
               <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed italic">
                 "We didn't start with a business plan. We started with a question."
               </p>

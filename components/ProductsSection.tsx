@@ -28,7 +28,7 @@ const STATUS_CONFIG = {
   },
   'coming-soon': {
     label: 'Coming Soon',
-    className: 'bg-stone-100 dark:bg-[#2A2A2A] text-stone-500 dark:text-stone-400 border-stone-200 dark:border-[#3A3A3A]',
+    className: 'bg-stone-100 dark:bg-[#101524] text-stone-500 dark:text-stone-400 border-stone-200 dark:border-[#1A2235]',
   },
 };
 
@@ -54,7 +54,7 @@ const COLOR_CONFIG: Record<string, { icon: string; accent: string }> = {
     accent: 'group-hover:border-amber-300 dark:group-hover:border-amber-500/40',
   },
   slate: {
-    icon: 'bg-stone-100 dark:bg-[#2A2A2A] text-stone-500 dark:text-stone-400',
+    icon: 'bg-stone-100 dark:bg-[#101524] text-stone-500 dark:text-stone-400',
     accent: 'group-hover:border-stone-300 dark:group-hover:border-stone-600',
   },
 };
@@ -65,7 +65,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section id="products" className="py-24 bg-[#FAFAF9] dark:bg-[#141414] border-t border-stone-100 dark:border-[#2A2A2A]">
+    <section id="products" className="py-24 bg-[#FAFAF9] dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -107,7 +107,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
             return (
               <motion.div
                 key={product.id}
-                className={`group relative rounded-2xl border border-stone-200 dark:border-[#2A2A2A] bg-white dark:bg-[#1C1C1C] p-6 flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.07)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.35)] ${colorCfg.accent} ${isSoon ? 'opacity-75 hover:opacity-90' : ''}`}
+                className={`group relative rounded-2xl border border-stone-200 dark:border-[#101524] bg-white dark:bg-[#070B16] p-6 flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.07)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.35)] ${colorCfg.accent} ${isSoon ? 'opacity-75 hover:opacity-90' : ''}`}
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 + i * 0.1 }}
@@ -150,7 +150,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
                     href={product.externalLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-stone-100 dark:border-[#2A2A2A] group-hover:border-stone-200 dark:group-hover:border-[#3A3A3A] text-[13px] font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
+                    className="mt-auto w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-stone-100 dark:border-[#101524] group-hover:border-stone-200 dark:group-hover:border-[#1A2235] text-[13px] font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
                   >
                     <span>{product.linkText}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -158,7 +158,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
                 ) : (
                   <button
                     onClick={() => onSelectProduct(product)}
-                    className="mt-auto w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-stone-100 dark:border-[#2A2A2A] group-hover:border-stone-200 dark:group-hover:border-[#3A3A3A] text-[13px] font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
+                    className="mt-auto w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-stone-100 dark:border-[#101524] group-hover:border-stone-200 dark:group-hover:border-[#1A2235] text-[13px] font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
                   >
                     <span>{product.linkText}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

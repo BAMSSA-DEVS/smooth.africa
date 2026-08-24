@@ -13,7 +13,7 @@ export const TeamSection: React.FC = () => {
   return (
     <section
       id="team"
-      className="py-24 bg-white dark:bg-[#1C1C1C] border-t border-stone-100 dark:border-[#2A2A2A]"
+      className="py-24 bg-white dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -50,13 +50,13 @@ export const TeamSection: React.FC = () => {
           {team.map((member, i) => (
             <motion.div
               key={member.id}
-              className="group rounded-2xl border border-stone-200 dark:border-[#2A2A2A] bg-[#FAFAF9] dark:bg-[#141414] overflow-hidden hover:border-stone-300 dark:hover:border-[#3A3A3A] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.35)] transition-all duration-300"
+              className="group rounded-2xl border border-stone-200 dark:border-[#101524] bg-[#FAFAF9] dark:bg-[#070B16] overflow-hidden hover:border-stone-300 dark:hover:border-[#3A3A3A] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.35)] transition-all duration-300"
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 + i * 0.08 }}
             >
               {/* Photo */}
-              <div className="relative overflow-hidden aspect-[4/3] bg-stone-100 dark:bg-[#2A2A2A]">
+              <div className="relative overflow-hidden aspect-[4/3] bg-stone-100 dark:bg-[#00030E]">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -70,14 +70,14 @@ export const TeamSection: React.FC = () => {
                   <a
                     href={member.linkedin}
                     aria-label={`${member.name} on LinkedIn`}
-                    className="p-1.5 rounded-lg bg-white/90 dark:bg-[#1C1C1C]/90 backdrop-blur-sm text-stone-600 dark:text-stone-400 hover:text-[#1258AB] border border-white/50 dark:border-[#2A2A2A] transition-colors"
+                    className="p-1.5 rounded-lg bg-white/90 dark:bg-[#070B16]/90 backdrop-blur-sm text-stone-600 dark:text-stone-400 hover:text-[#1258AB] border border-white/50 dark:border-[#101524] transition-colors"
                   >
                     <Linkedin className="w-3.5 h-3.5" />
                   </a>
                   <a
                     href={`mailto:${member.email}`}
                     aria-label={`Email ${member.name}`}
-                    className="p-1.5 rounded-lg bg-white/90 dark:bg-[#1C1C1C]/90 backdrop-blur-sm text-stone-600 dark:text-stone-400 hover:text-[#1258AB] border border-white/50 dark:border-[#2A2A2A] transition-colors"
+                    className="p-1.5 rounded-lg bg-white/90 dark:bg-[#070B16]/90 backdrop-blur-sm text-stone-600 dark:text-stone-400 hover:text-[#1258AB] border border-white/50 dark:border-[#101524] transition-colors"
                   >
                     <Mail className="w-3.5 h-3.5" />
                   </a>

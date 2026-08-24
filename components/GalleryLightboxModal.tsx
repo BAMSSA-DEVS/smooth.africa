@@ -30,7 +30,7 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({ item
 
           {/* Modal */}
           <motion.div
-            className="relative z-10 w-full max-w-3xl rounded-2xl overflow-hidden bg-white dark:bg-[#1C1C1C] border border-stone-200 dark:border-[#2A2A2A] shadow-2xl"
+            className="relative z-10 w-full max-w-3xl rounded-2xl overflow-hidden bg-white dark:bg-[#070B16] border border-stone-200 dark:border-[#101524] shadow-2xl"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -40,14 +40,14 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({ item
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-3 right-3 z-10 p-1.5 rounded-lg bg-white/90 dark:bg-[#1C1C1C]/90 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 border border-stone-200 dark:border-[#2A2A2A] backdrop-blur-sm transition-colors"
+              className="absolute top-3 right-3 z-10 p-1.5 rounded-lg bg-white/90 dark:bg-[#070B16]/90 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 border border-stone-200 dark:border-[#101524] backdrop-blur-sm transition-colors"
               aria-label="Close lightbox"
             >
               <X className="w-4 h-4" />
             </button>
 
             {/* Image */}
-            <div className="aspect-video overflow-hidden bg-stone-100 dark:bg-[#2A2A2A]">
+            <div className="aspect-video overflow-hidden bg-stone-100 dark:bg-[#101524]">
               <img
                 src={item.imageUrl}
                 alt={item.title}

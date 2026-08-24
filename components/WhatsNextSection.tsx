@@ -8,7 +8,7 @@ export const WhatsNextSection: React.FC = () => {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="py-24 bg-white dark:bg-[#1C1C1C]">
+    <section className="py-24 bg-white dark:bg-[#00030E]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" ref={ref}>
         <motion.span
           className="text-xs font-semibold uppercase tracking-widest text-[#1258AB] dark:text-blue-400 block mb-3"

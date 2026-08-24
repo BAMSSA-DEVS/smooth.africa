@@ -15,7 +15,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
   return (
     <section
       id="contact"
-      className="py-24 bg-[#FAFAF9] dark:bg-[#141414] border-t border-stone-100 dark:border-[#2A2A2A]"
+      className="py-24 bg-[#FAFAF9] dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="flex flex-col items-center text-center max-w-3xl mx-auto">
@@ -63,7 +63,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               </button>
               <a
                 href="#products"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-white dark:bg-[#1C1C1C] hover:border-stone-300 dark:hover:border-[#3A3A3A] text-stone-800 dark:text-stone-200 font-semibold text-[15px] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-stone-200 dark:border-[#101524] bg-white dark:bg-[#070B16] hover:border-stone-300 dark:hover:border-[#3A3A3A] text-stone-800 dark:text-stone-200 font-semibold text-[15px] transition-all"
               >
                 Explore Products
               </a>
@@ -77,7 +77,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-stone-100 dark:bg-[#2A2A2A] text-stone-400 dark:text-stone-500 shrink-0">
+                <div className="p-2 rounded-lg bg-stone-100 dark:bg-[#101524] text-stone-400 dark:text-stone-500 shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
@@ -91,7 +91,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-stone-100 dark:bg-[#2A2A2A] text-stone-400 dark:text-stone-500 shrink-0">
+                <div className="p-2 rounded-lg bg-stone-100 dark:bg-[#101524] text-stone-400 dark:text-stone-500 shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
@@ -102,7 +102,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-stone-100 dark:bg-[#2A2A2A] text-stone-400 dark:text-stone-500 shrink-0">
+                <div className="p-2 rounded-lg bg-stone-100 dark:bg-[#101524] text-stone-400 dark:text-stone-500 shrink-0">
                   <MessageSquare className="w-4 h-4" />
                 </div>
                 <div>

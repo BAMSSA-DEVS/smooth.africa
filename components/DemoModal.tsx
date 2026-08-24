@@ -45,7 +45,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
           <div className="absolute inset-0 bg-stone-950/80 backdrop-blur-sm" />
 
           <motion.div
-            className="relative z-10 w-full max-w-md rounded-2xl bg-white dark:bg-[#1C1C1C] border border-stone-200 dark:border-[#2A2A2A] shadow-2xl"
+            className="relative z-10 w-full max-w-md rounded-2xl bg-white dark:bg-[#070B16] border border-stone-200 dark:border-[#101524] shadow-2xl"
             initial={{ scale: 0.95, opacity: 0, y: 16 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 16 }}
@@ -53,7 +53,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-5 border-b border-stone-100 dark:border-[#2A2A2A]">
+            <div className="flex items-center justify-between p-5 border-b border-stone-100 dark:border-[#101524]">
               <div>
                 <h2 className="font-heading font-bold text-[17px] text-stone-900 dark:text-stone-100">
                   Book a Demo
@@ -106,7 +106,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Adeola Okafor"
                     required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-[#FAFAF9] dark:bg-[#141414] text-stone-900 dark:text-stone-100 text-sm placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#1258AB]/30 focus:border-[#1258AB]/60 transition-all"
+                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#101524] bg-[#FAFAF9] dark:bg-[#00030E] text-stone-900 dark:text-stone-100 text-sm placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#1258AB]/30 focus:border-[#1258AB]/60 transition-all"
                   />
                 </div>
 
@@ -122,7 +122,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@company.com"
                     required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-[#FAFAF9] dark:bg-[#141414] text-stone-900 dark:text-stone-100 text-sm placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#1258AB]/30 focus:border-[#1258AB]/60 transition-all"
+                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#101524] bg-[#FAFAF9] dark:bg-[#00030E] text-stone-900 dark:text-stone-100 text-sm placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#1258AB]/30 focus:border-[#1258AB]/60 transition-all"
                   />
                 </div>
 
@@ -137,7 +137,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     value={org}
                     onChange={(e) => setOrg(e.target.value)}
                     placeholder="Company or institution"
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#2A2A2A] bg-[#FAFAF9] dark:bg-[#141414] text-stone-900 dark:text-stone-100 text-sm placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#1258AB]/30 focus:border-[#1258AB]/60 transition-all"
+                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#101524] bg-[#FAFAF9] dark:bg-[#00030E] text-stone-900 dark:text-stone-100 text-sm placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#1258AB]/30 focus:border-[#1258AB]/60 transition-all"
                   />
                 </div>
 
@@ -155,7 +155,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                         className={`px-3 py-2 rounded-xl border text-sm font-medium transition-all text-left ${
                           product === p
                             ? 'bg-[#1258AB]/10 border-[#1258AB]/40 text-[#1258AB] dark:text-blue-400'
-                            : 'border-stone-200 dark:border-[#2A2A2A] text-stone-600 dark:text-stone-400 hover:border-stone-300 dark:hover:border-[#3A3A3A]'
+                            : 'border-stone-200 dark:border-[#101524] text-stone-600 dark:text-stone-400 hover:border-stone-300 dark:hover:border-[#3A3A3A]'
                         }`}
                       >
                         {p}

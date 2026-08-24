@@ -12,7 +12,7 @@ export const VisionMissionSection: React.FC = () => {
   return (
     <section
       id="vision"
-      className="py-24 bg-white dark:bg-[#1C1C1C] border-t border-stone-100 dark:border-[#2A2A2A]"
+      className="py-24 bg-white dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -64,7 +64,7 @@ export const VisionMissionSection: React.FC = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
-            className="rounded-2xl border border-stone-200 dark:border-[#2A2A2A] bg-[#FAFAF9] dark:bg-[#141414] p-8 lg:p-10 relative overflow-hidden"
+            className="rounded-2xl border border-stone-200 dark:border-[#101524] bg-[#FAFAF9] dark:bg-[#070B16] p-8 lg:p-10 relative overflow-hidden"
           >
             <div className="relative z-10 space-y-5">
               <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#1258AB] dark:text-blue-400">

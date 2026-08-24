@@ -8,7 +8,7 @@ export const PositioningSection: React.FC = () => {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="py-24 bg-white dark:bg-[#1C1C1C] border-t border-stone-100 dark:border-[#2A2A2A]">
+    <section className="py-24 bg-white dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" ref={ref}>
         <motion.p
           className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-stone-900 dark:text-stone-100 leading-tight tracking-tight text-balance"

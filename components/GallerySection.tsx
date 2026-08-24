@@ -30,7 +30,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
   return (
     <section
       id="gallery"
-      className="py-24 bg-[#FAFAF9] dark:bg-[#141414] border-t border-stone-100 dark:border-[#2A2A2A]"
+      className="py-24 bg-[#FAFAF9] dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -60,7 +60,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
               className={`px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all ${
                 activeCategory === cat.id
                   ? 'bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900'
-                  : 'bg-white dark:bg-[#1C1C1C] border border-stone-200 dark:border-[#2A2A2A] text-stone-500 dark:text-stone-400 hover:border-stone-300 dark:hover:border-[#3A3A3A]'
+                  : 'bg-white dark:bg-[#070B16] border border-stone-200 dark:border-[#101524] text-stone-500 dark:text-stone-400 hover:border-stone-300 dark:hover:border-[#3A3A3A]'
               }`}
             >
               {cat.label}
@@ -82,7 +82,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
             {[...filtered, ...filtered].map((item, i) => (
               <motion.button
                 key={`${item.id}-${i}`}
-                className="group relative rounded-2xl overflow-hidden w-64 sm:w-72 md:w-80 shrink-0 aspect-[3/4] bg-stone-100 dark:bg-[#2A2A2A] cursor-pointer text-left"
+                className="group relative rounded-2xl overflow-hidden w-64 sm:w-72 md:w-80 shrink-0 aspect-[3/4] bg-stone-100 dark:bg-[#101524] cursor-pointer text-left"
                 onClick={() => onSelectImage(item)}
                 whileHover={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}

@@ -30,7 +30,7 @@ const footerLinks = {
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-[#1C1C1C] border-t border-stone-200 dark:border-[#2A2A2A]">
+    <footer className="bg-white dark:bg-[#00030E] border-t border-stone-200 dark:border-[#101524]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Main footer content */}
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-stone-100 dark:border-[#2A2A2A] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="py-6 border-t border-stone-100 dark:border-[#101524] flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-stone-400 dark:text-stone-500">
             © {new Date().getFullYear()} Smooth Africa. All rights reserved.
           </p>
