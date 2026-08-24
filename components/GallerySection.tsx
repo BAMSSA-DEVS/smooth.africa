@@ -68,20 +68,58 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
           ))}
         </motion.div>
 
-        {/* Horizontal Marquee Wrapper */}
-        <div className="relative w-full overflow-hidden mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
-          <motion.div
-            className="flex gap-4 w-max"
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{
-              duration: 25,
-              ease: 'linear',
-              repeat: Infinity,
-            }}
-          >
-            {[...filtered, ...filtered].map((item, i) => (
+        {/* Content Area */}
+        {activeCategory === 'all' ? (
+          <div className="relative w-full overflow-hidden mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <motion.div
+              className="flex gap-4 w-max"
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{
+                duration: 60, // Slowed down from 25
+                ease: 'linear',
+                repeat: Infinity,
+              }}
+            >
+              {[...filtered, ...filtered].map((item, i) => (
+                <motion.button
+                  key={`all-${item.id}-${i}`}
+                  className="group relative rounded-2xl overflow-hidden w-64 sm:w-72 md:w-80 shrink-0 aspect-[3/4] bg-stone-100 dark:bg-[#101524] cursor-pointer text-left"
+                  onClick={() => onSelectImage(item)}
+                  whileHover={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
+                      <p className="font-heading font-bold text-white text-base md:text-lg tracking-tight line-clamp-1">
+                        {item.title}
+                      </p>
+                    </div>
+                    <span className="text-xs font-medium text-stone-300 ml-3.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Click to view
+                    </span>
+                  </div>
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-semibold text-white border border-white/30">
+                      {item.categoryLabel}
+                    </span>
+                  </div>
+                </motion.button>
+              ))}
+            </motion.div>
+          </div>
+        ) : (
+          <div className="relative w-full mt-8 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-4 overflow-x-auto pb-6 no-scrollbar">
+            {filtered.map((item, i) => (
               <motion.button
-                key={`${item.id}-${i}`}
+                key={`cat-${item.id}-${i}`}
                 className="group relative rounded-2xl overflow-hidden w-64 sm:w-72 md:w-80 shrink-0 aspect-[3/4] bg-stone-100 dark:bg-[#101524] cursor-pointer text-left"
                 onClick={() => onSelectImage(item)}
                 whileHover={{ scale: 0.98 }}
@@ -93,11 +131,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-
-                {/* Permanent subtle gradient for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent pointer-events-none" />
-
-                {/* Info — always visible at bottom left */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
@@ -109,8 +143,6 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
                     Click to view
                   </span>
                 </div>
-
-                {/* Category pill — hidden to match the clean aesthetic of the mockup, or can be kept top right */}
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-semibold text-white border border-white/30">
                     {item.categoryLabel}
@@ -118,8 +150,8 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
                 </div>
               </motion.button>
             ))}
-          </motion.div>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
