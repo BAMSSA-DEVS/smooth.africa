@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
 import { PositioningSection } from '@/components/PositioningSection';
-import { StorySection } from '@/components/StorySection';
 import { ProductsSection } from '@/components/ProductsSection';
+import { CinematicTeamSection } from '@/components/CinematicTeamSection';
+import { StorySection } from '@/components/StorySection';
 import { VisionMissionSection } from '@/components/VisionMissionSection';
 import { ValuesSection } from '@/components/ValuesSection';
 import { TeamSection } from '@/components/TeamSection';
@@ -35,11 +36,14 @@ export default function Home() {
         {/* 1.5 Positioning */}
         <PositioningSection />
 
-        {/* 2. Our Story */}
-        <StorySection />
-
         {/* 3. Products */}
         <ProductsSection onSelectProduct={(prod) => setSelectedProduct(prod)} />
+
+        {/* Cinematic Experience */}
+        <CinematicTeamSection />
+
+        {/* 2. Our Story */}
+        <StorySection />
 
         {/* 4. Vision & Mission */}
         <VisionMissionSection />
