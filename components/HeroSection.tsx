@@ -26,11 +26,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
     offset: ['start start', 'end start'],
   });
 
-  // Map scroll progress to a subtle Y translation for the parallax effect
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  // Map scroll progress to a subtle Y translation for the parallax effect (0px to 150px)
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   
   // Use a fallback for reduced motion
-  const motionBackgroundY = prefersReducedMotion ? '0%' : backgroundY;
+  const motionBackgroundY = prefersReducedMotion ? 0 : backgroundY;
+  const motionScale = prefersReducedMotion ? 1 : 1.15;
 
   return (
     <section
@@ -41,8 +42,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <motion.div 
-          className="absolute -inset-[10%] w-[120%] h-[120%]"
-          style={{ y: motionBackgroundY }}
+          className="w-full h-full origin-top"
+          style={{ y: motionBackgroundY, scale: motionScale }}
         >
           {/* Light mode background */}
           <img 
