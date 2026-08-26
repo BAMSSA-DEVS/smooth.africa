@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { ArrowRight, MessageSquare } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 interface HeroSectionProps {
   onOpenDemoModal: () => void;
@@ -18,25 +18,45 @@ const fadeUp = {
 };
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Map scroll progress to a subtle Y translation for the parallax effect
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  
+  // Use a fallback for reduced motion
+  const motionBackgroundY = prefersReducedMotion ? '0%' : backgroundY;
+
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative min-h-screen flex items-center pt-20 pb-24 overflow-hidden bg-[#FAFAF9] dark:bg-[#060D1A]"
     >
       {/* Background Image Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Light mode background */}
-        <img 
-          src="/hero-bg-light.jpg" 
-          alt="Africa Map Background Light" 
-          className="w-full h-full object-cover object-right dark:hidden"
-        />
-        {/* Dark mode background */}
-        <img 
-          src="/hero-bg.jpg" 
-          alt="Africa Map Background Dark" 
-          className="w-full h-full object-cover object-right hidden dark:block"
-        />
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div 
+          className="absolute -inset-[10%] w-[120%] h-[120%]"
+          style={{ y: motionBackgroundY }}
+        >
+          {/* Light mode background */}
+          <img 
+            src="/hero-bg-light.jpg" 
+            alt="Africa Map Background Light" 
+            className="w-full h-full object-cover object-right dark:hidden"
+          />
+          {/* Dark mode background */}
+          <img 
+            src="/hero-bg.jpg" 
+            alt="Africa Map Background Dark" 
+            className="w-full h-full object-cover object-right hidden dark:block"
+          />
+        </motion.div>
         {/* Gradient overlay to ensure text readability on smaller screens */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAF9] dark:from-[#060D1A] via-[#FAFAF9]/90 dark:via-[#060D1A]/80 to-transparent w-full md:w-[60%]" />
       </div>
