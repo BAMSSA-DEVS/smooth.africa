@@ -347,48 +347,57 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
     offset: ['start start', 'end end'],
   });
 
-  // Calculate scroll ranges for 3 products
-  // Product 0: 0.00 -> 0.28
-  // Product 1: 0.33 -> 0.61
-  // Product 2: 0.66 -> 0.95
+  // Calculate scroll ranges for 3 products without text overlap:
+  // Product 01: Active [0.00 -> 0.27], Fades out [0.25 -> 0.30]
+  // Product 02: Fades in [0.31 -> 0.36], Active [0.36 -> 0.60], Fades out [0.60 -> 0.65]
+  // Product 03: Fades in [0.66 -> 0.71], Active [0.71 -> 0.94], Fades out [0.93 -> 0.98]
 
   // Product 1 Transforms
   const p1Opacity = prefersReducedMotion
     ? 1
-    : useTransform(scrollYProgress, [0.22, 0.30], [1, 0]);
+    : useTransform(scrollYProgress, [0, 0.25, 0.30], [1, 1, 0]);
   const p1Scale = prefersReducedMotion
     ? 1
-    : useTransform(scrollYProgress, [0.22, 0.30], [1, 0.94]);
+    : useTransform(scrollYProgress, [0, 0.25, 0.30], [1, 1, 0.95]);
   const p1Y = prefersReducedMotion
     ? 0
-    : useTransform(scrollYProgress, [0.22, 0.30], [0, -40]);
+    : useTransform(scrollYProgress, [0, 0.25, 0.30], [0, 0, -30]);
+  const p1Visibility = prefersReducedMotion
+    ? 'visible'
+    : useTransform(scrollYProgress, (pos) => (pos >= 0.305 ? 'hidden' : 'visible'));
 
   // Product 2 Transforms
   const p2Opacity = prefersReducedMotion
     ? 1
-    : useTransform(scrollYProgress, [0.28, 0.36, 0.58, 0.66], [0, 1, 1, 0]);
+    : useTransform(scrollYProgress, [0.30, 0.35, 0.60, 0.65], [0, 1, 1, 0]);
   const p2Scale = prefersReducedMotion
     ? 1
-    : useTransform(scrollYProgress, [0.28, 0.36, 0.58, 0.66], [0.94, 1, 1, 0.94]);
+    : useTransform(scrollYProgress, [0.30, 0.35, 0.60, 0.65], [0.95, 1, 1, 0.95]);
   const p2Y = prefersReducedMotion
     ? 0
-    : useTransform(scrollYProgress, [0.28, 0.36, 0.58, 0.66], [60, 0, 0, -40]);
+    : useTransform(scrollYProgress, [0.30, 0.35, 0.60, 0.65], [40, 0, 0, -30]);
+  const p2Visibility = prefersReducedMotion
+    ? 'visible'
+    : useTransform(scrollYProgress, (pos) => (pos < 0.295 || pos >= 0.655 ? 'hidden' : 'visible'));
 
   // Product 3 Transforms
   const p3Opacity = prefersReducedMotion
     ? 1
-    : useTransform(scrollYProgress, [0.63, 0.71, 0.90, 0.96], [0, 1, 1, 0]);
+    : useTransform(scrollYProgress, [0.65, 0.70, 0.93, 0.98], [0, 1, 1, 0]);
   const p3Scale = prefersReducedMotion
     ? 1
-    : useTransform(scrollYProgress, [0.63, 0.71, 0.90, 0.96], [0.94, 1, 1, 0.94]);
+    : useTransform(scrollYProgress, [0.65, 0.70, 0.93, 0.98], [0.95, 1, 1, 0.95]);
   const p3Y = prefersReducedMotion
     ? 0
-    : useTransform(scrollYProgress, [0.63, 0.71, 0.90, 0.96], [60, 0, 0, -40]);
+    : useTransform(scrollYProgress, [0.65, 0.70, 0.93, 0.98], [40, 0, 0, -30]);
+  const p3Visibility = prefersReducedMotion
+    ? 'visible'
+    : useTransform(scrollYProgress, (pos) => (pos < 0.645 ? 'hidden' : 'visible'));
 
   // Active Index calculation for indicator
   const activeProductIndex = useTransform(scrollYProgress, (pos) => {
     if (pos < 0.31) return 0;
-    if (pos < 0.64) return 1;
+    if (pos < 0.65) return 1;
     return 2;
   });
 
@@ -402,9 +411,9 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
   }, [activeProductIndex]);
 
   const getProductMotionStyles = (index: number) => {
-    if (index === 0) return { opacity: p1Opacity, scale: p1Scale, y: p1Y };
-    if (index === 1) return { opacity: p2Opacity, scale: p2Scale, y: p2Y };
-    return { opacity: p3Opacity, scale: p3Scale, y: p3Y };
+    if (index === 0) return { opacity: p1Opacity, scale: p1Scale, y: p1Y, visibility: p1Visibility };
+    if (index === 1) return { opacity: p2Opacity, scale: p2Scale, y: p2Y, visibility: p2Visibility };
+    return { opacity: p3Opacity, scale: p3Scale, y: p3Y, visibility: p3Visibility };
   };
 
   return (
@@ -449,6 +458,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
                       opacity: motionStyle.opacity,
                       scale: motionStyle.scale,
                       y: motionStyle.y,
+                      visibility: motionStyle.visibility,
                       pointerEvents: activeIndex === i ? 'auto' : 'none',
                     }}
                   >
