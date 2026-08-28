@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   Vote,
   Trophy,
@@ -16,7 +16,7 @@ import {
   Activity,
   Check,
 } from 'lucide-react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { Product } from '@/data/companyData';
 
 interface ProductsSectionProps {
@@ -347,74 +347,22 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
     offset: ['start start', 'end end'],
   });
 
-  // Calculate scroll ranges for 3 products without text overlap:
-  // Product 01: Active [0.00 -> 0.27], Fades out [0.25 -> 0.30]
-  // Product 02: Fades in [0.31 -> 0.36], Active [0.36 -> 0.60], Fades out [0.60 -> 0.65]
-  // Product 03: Fades in [0.66 -> 0.71], Active [0.71 -> 0.94], Fades out [0.93 -> 0.98]
-
-  // Product 1 Transforms
-  const p1Opacity = prefersReducedMotion
-    ? 1
-    : useTransform(scrollYProgress, [0, 0.25, 0.30], [1, 1, 0]);
-  const p1Scale = prefersReducedMotion
-    ? 1
-    : useTransform(scrollYProgress, [0, 0.25, 0.30], [1, 1, 0.95]);
-  const p1Y = prefersReducedMotion
-    ? 0
-    : useTransform(scrollYProgress, [0, 0.25, 0.30], [0, 0, -30]);
-  const p1Visibility = prefersReducedMotion
-    ? 'visible'
-    : useTransform(scrollYProgress, (pos) => (pos >= 0.305 ? 'hidden' : 'visible'));
-
-  // Product 2 Transforms
-  const p2Opacity = prefersReducedMotion
-    ? 1
-    : useTransform(scrollYProgress, [0.30, 0.35, 0.60, 0.65], [0, 1, 1, 0]);
-  const p2Scale = prefersReducedMotion
-    ? 1
-    : useTransform(scrollYProgress, [0.30, 0.35, 0.60, 0.65], [0.95, 1, 1, 0.95]);
-  const p2Y = prefersReducedMotion
-    ? 0
-    : useTransform(scrollYProgress, [0.30, 0.35, 0.60, 0.65], [40, 0, 0, -30]);
-  const p2Visibility = prefersReducedMotion
-    ? 'visible'
-    : useTransform(scrollYProgress, (pos) => (pos < 0.295 || pos >= 0.655 ? 'hidden' : 'visible'));
-
-  // Product 3 Transforms
-  const p3Opacity = prefersReducedMotion
-    ? 1
-    : useTransform(scrollYProgress, [0.65, 0.70, 0.93, 0.98], [0, 1, 1, 0]);
-  const p3Scale = prefersReducedMotion
-    ? 1
-    : useTransform(scrollYProgress, [0.65, 0.70, 0.93, 0.98], [0.95, 1, 1, 0.95]);
-  const p3Y = prefersReducedMotion
-    ? 0
-    : useTransform(scrollYProgress, [0.65, 0.70, 0.93, 0.98], [40, 0, 0, -30]);
-  const p3Visibility = prefersReducedMotion
-    ? 'visible'
-    : useTransform(scrollYProgress, (pos) => (pos < 0.645 ? 'hidden' : 'visible'));
-
-  // Active Index calculation for indicator
   const activeProductIndex = useTransform(scrollYProgress, (pos) => {
-    if (pos < 0.31) return 0;
-    if (pos < 0.65) return 1;
+    if (pos < 0.33) return 0;
+    if (pos < 0.66) return 1;
     return 2;
   });
 
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const unsubscribe = activeProductIndex.on('change', (latest) => {
       setActiveIndex(latest);
     });
     return () => unsubscribe();
   }, [activeProductIndex]);
 
-  const getProductMotionStyles = (index: number) => {
-    if (index === 0) return { opacity: p1Opacity, scale: p1Scale, y: p1Y, visibility: p1Visibility };
-    if (index === 1) return { opacity: p2Opacity, scale: p2Scale, y: p2Y, visibility: p2Visibility };
-    return { opacity: p3Opacity, scale: p3Scale, y: p3Y, visibility: p3Visibility };
-  };
+  const activeProduct = SHOWCASE_PRODUCTS[activeIndex];
 
   return (
     <section id="products" className="bg-[#FAFAF9] dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]">
@@ -440,132 +388,124 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
       </div>
 
       {/* ─── DESKTOP SCROLL-DRIVEN SHOWCASE (sticky pinned container) ─── */}
-      <div ref={containerRef} className="hidden lg:block relative h-[320vh]">
+      <div ref={containerRef} className="hidden lg:block relative h-[300vh]">
         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative">
             
-            {/* Background Stage Wrapper */}
+            {/* Stage Container */}
             <div className="relative min-h-[580px] h-[78vh] max-h-[720px] w-full flex items-center">
-              
-              {SHOWCASE_PRODUCTS.map((prod, i) => {
-                const motionStyle = getProductMotionStyles(i);
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeProduct.id}
+                  initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 24, scale: 0.97 }}
+                  animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+                  exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -24, scale: 0.97 }}
+                  transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="w-full h-full grid grid-cols-12 gap-12 items-center"
+                >
+                  {/* LEFT COLUMN: Product Text & Details (40-45% width -> 5 cols) */}
+                  <div className="col-span-5 flex flex-col justify-center space-y-6">
+                    
+                    {/* Product Number & Badge */}
+                    <div className="flex items-center gap-3">
+                      <span className="font-heading text-2xl font-extrabold text-[#1258AB] dark:text-blue-400">
+                        {activeProduct.number}
+                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-stone-300 dark:bg-stone-700" />
+                      <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold border bg-blue-50 dark:bg-blue-500/10 text-[#1258AB] dark:text-blue-400 border-blue-200 dark:border-blue-500/20">
+                        {activeProduct.badge}
+                      </span>
+                    </div>
 
-                return (
-                  <motion.div
-                    key={prod.id}
-                    className="absolute inset-0 w-full h-full grid grid-cols-12 gap-12 items-center"
-                    style={{
-                      opacity: motionStyle.opacity,
-                      scale: motionStyle.scale,
-                      y: motionStyle.y,
-                      visibility: motionStyle.visibility,
-                      pointerEvents: activeIndex === i ? 'auto' : 'none',
-                    }}
-                  >
-                    {/* LEFT COLUMN: Product Text & Details (40-45% width -> 5 cols) */}
-                    <div className="col-span-5 flex flex-col justify-center space-y-6">
-                      
-                      {/* Product Number & Badge */}
-                      <div className="flex items-center gap-3">
-                        <span className="font-heading text-2xl font-extrabold text-[#1258AB] dark:text-blue-400">
-                          {prod.number}
-                        </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-stone-300 dark:bg-stone-700" />
-                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold border bg-blue-50 dark:bg-blue-500/10 text-[#1258AB] dark:text-blue-400 border-blue-200 dark:border-blue-500/20">
-                          {prod.badge}
-                        </span>
-                      </div>
-
-                      {/* Product Name & Positioning */}
-                      <div>
-                        <h3 className="font-heading text-3xl xl:text-4xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight">
-                          {prod.name}
-                        </h3>
-                        <p className="font-heading text-base font-semibold text-[#1258AB] dark:text-blue-400 mt-1">
-                          {prod.positioning}
-                        </p>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-stone-600 dark:text-stone-400 text-base leading-relaxed">
-                        {prod.description}
+                    {/* Product Name & Positioning */}
+                    <div>
+                      <h3 className="font-heading text-3xl xl:text-4xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight">
+                        {activeProduct.name}
+                      </h3>
+                      <p className="font-heading text-base font-semibold text-[#1258AB] dark:text-blue-400 mt-1">
+                        {activeProduct.positioning}
                       </p>
-
-                      {/* Key Capabilities */}
-                      <ul className="space-y-2.5 pt-1">
-                        {prod.capabilities.map((cap, ci) => (
-                          <li key={ci} className="flex items-center gap-2.5 text-sm text-stone-700 dark:text-stone-300 font-medium">
-                            <div className="w-4 h-4 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
-                              <CheckCircle2 className="w-3.5 h-3.5" />
-                            </div>
-                            <span>{cap}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* CTA Link / Button */}
-                      <div className="pt-2">
-                        {prod.isExternal ? (
-                          <a
-                            href={prod.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all group"
-                          >
-                            <span>{prod.ctaText}</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </a>
-                        ) : (
-                          <button
-                            onClick={() => onSelectProduct && onSelectProduct({
-                              id: prod.id,
-                              name: prod.name,
-                              tagline: prod.positioning,
-                              description: prod.description,
-                              status: 'live',
-                              iconName: 'Sparkles',
-                              color: prod.color,
-                              features: prod.capabilities,
-                              linkText: prod.ctaText,
-                            })}
-                            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all group"
-                          >
-                            <span>{prod.ctaText}</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </button>
-                        )}
-                      </div>
                     </div>
 
-                    {/* RIGHT COLUMN: Product Interface Visual (55-60% width -> 7 cols) */}
-                    <div className="col-span-7 h-full min-h-[440px] max-h-[600px] w-full p-2">
-                      <div className="w-full h-full rounded-2xl p-2 bg-gradient-to-b from-stone-200/50 to-stone-300/30 dark:from-stone-800/40 dark:to-stone-900/60 border border-stone-200 dark:border-stone-800/80 shadow-xl">
-                        {RENDER_VISUAL(prod.visualType)}
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
+                    {/* Description */}
+                    <p className="text-stone-600 dark:text-stone-400 text-base leading-relaxed">
+                      {activeProduct.description}
+                    </p>
 
+                    {/* Key Capabilities */}
+                    <ul className="space-y-2.5 pt-1">
+                      {activeProduct.capabilities.map((cap, ci) => (
+                        <li key={ci} className="flex items-center gap-2.5 text-sm text-stone-700 dark:text-stone-300 font-medium">
+                          <div className="w-4 h-4 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                            <CheckCircle2 className="w-3.5 h-3.5" />
+                          </div>
+                          <span>{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA Link / Button */}
+                    <div className="pt-2">
+                      {activeProduct.isExternal ? (
+                        <a
+                          href={activeProduct.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all group"
+                        >
+                          <span>{activeProduct.ctaText}</span>
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => onSelectProduct && onSelectProduct({
+                            id: activeProduct.id,
+                            name: activeProduct.name,
+                            tagline: activeProduct.positioning,
+                            description: activeProduct.description,
+                            status: 'live',
+                            iconName: 'Sparkles',
+                            color: activeProduct.color,
+                            features: activeProduct.capabilities,
+                            linkText: activeProduct.ctaText,
+                          })}
+                          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all group"
+                        >
+                          <span>{activeProduct.ctaText}</span>
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* RIGHT COLUMN: Product Interface Visual (55-60% width -> 7 cols) */}
+                  <div className="col-span-7 h-full min-h-[440px] max-h-[600px] w-full p-2">
+                    <div className="w-full h-full rounded-2xl p-2 bg-gradient-to-b from-stone-200/50 to-stone-300/30 dark:from-stone-800/40 dark:to-stone-900/60 border border-stone-200 dark:border-stone-800/80 shadow-xl">
+                      {RENDER_VISUAL(activeProduct.visualType)}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Bottom Progress Navigation Indicator */}
             <div className="absolute -bottom-10 left-0 right-0 flex items-center justify-between text-xs font-semibold text-stone-400 dark:text-stone-500 pt-4 border-t border-stone-200 dark:border-stone-800/60">
               <div className="flex items-center gap-4">
                 {SHOWCASE_PRODUCTS.map((p, idx) => (
-                  <div
+                  <button
                     key={p.id}
-                    className={`flex items-center gap-1.5 transition-colors duration-300 ${
+                    onClick={() => setActiveIndex(idx)}
+                    className={`flex items-center gap-1.5 transition-colors duration-300 cursor-pointer ${
                       activeIndex === idx
                         ? 'text-[#1258AB] dark:text-blue-400 font-bold'
-                        : 'text-stone-400 dark:text-stone-600'
+                        : 'text-stone-400 dark:text-stone-600 hover:text-stone-600 dark:hover:text-stone-400'
                     }`}
                   >
                     <span className={`w-2 h-2 rounded-full transition-all ${
                       activeIndex === idx ? 'bg-[#1258AB] dark:bg-blue-400 scale-125' : 'bg-stone-300 dark:bg-stone-700'
                     }`} />
                     <span>{p.number}</span>
-                  </div>
+                  </button>
                 ))}
               </div>
 
