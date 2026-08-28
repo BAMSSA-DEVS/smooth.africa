@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Manrope } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
@@ -9,11 +9,11 @@ const inter = Inter({
   display: 'swap',
 });
 
-const manrope = Manrope({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-manrope',
+  variable: '--font-space-grotesk',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} scroll-smooth`}
+      className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased bg-[#FAFAF9] dark:bg-[#141414] text-stone-900 dark:text-stone-100 transition-colors duration-300">

@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        heading: ['var(--font-manrope)', 'Manrope', 'sans-serif'],
+        heading: ['var(--font-space-grotesk)', '"Space Grotesk"', 'sans-serif'],
         sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
       backgroundImage: {

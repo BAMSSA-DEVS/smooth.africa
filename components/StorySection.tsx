@@ -2,12 +2,20 @@
 
 import React, { useRef } from 'react';
 import { companyData } from '@/data/companyData';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 export const StorySection: React.FC = () => {
   const { story } = companyData;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const imageY = prefersReducedMotion ? '0%' : useTransform(scrollYProgress, [0, 1], ['-15%', '15%']);
 
   return (
     <section
@@ -62,6 +70,21 @@ export const StorySection: React.FC = () => {
                 {i === 0 ? para.slice(1) : para}
               </motion.p>
             ))}
+
+            {/* Parallax Image Block */}
+            <motion.div 
+              className="relative w-full h-[300px] sm:h-[400px] mt-12 rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-800"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.65, delay: 0.3 }}
+            >
+               <motion.img 
+                 src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1600"
+                 alt="Collaborative problem solving"
+                 className="w-full h-full object-cover object-center origin-top scale-125"
+                 style={{ y: imageY }}
+               />
+            </motion.div>
 
             {/* Visual supplement */}
             <motion.div

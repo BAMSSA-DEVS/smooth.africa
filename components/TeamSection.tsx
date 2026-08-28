@@ -3,22 +3,32 @@
 import React, { useRef } from 'react';
 import { companyData } from '@/data/companyData';
 import { Linkedin, Mail } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 export const TeamSection: React.FC = () => {
   const { team } = companyData;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  // Subtle 15px vertical parallax for team images
+  const imageY = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [-15, 15]);
 
   return (
     <section
+      ref={ref}
       id="team"
       className="py-24 bg-white dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div ref={ref} className="mb-14">
+        <div className="mb-14">
           <motion.span
             className="text-xs font-semibold uppercase tracking-widest text-[#1258AB] dark:text-blue-400"
             initial={{ opacity: 0, y: 16 }}
@@ -57,13 +67,14 @@ export const TeamSection: React.FC = () => {
             >
               {/* Photo */}
               <div className="relative overflow-hidden aspect-[4/3] bg-stone-100 dark:bg-[#00030E]">
-                <img
+                <motion.img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                  className="w-full h-full object-cover object-top origin-top group-hover:scale-[1.03] transition-transform duration-500 scale-110"
+                  style={{ y: imageY }}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent pointer-events-none" />
 
                 {/* Social links — appear on hover */}
                 <div className="absolute bottom-3 right-3 flex gap-1.5 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">

@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
-import { PositioningSection } from '@/components/PositioningSection';
-import { StorySection } from '@/components/StorySection';
+import { WhatWeDoSection } from '@/components/WhatWeDoSection';
 import { ProductsSection } from '@/components/ProductsSection';
+import { CinematicTeamSection } from '@/components/CinematicTeamSection';
+import { StorySection } from '@/components/StorySection';
 import { VisionMissionSection } from '@/components/VisionMissionSection';
 import { ValuesSection } from '@/components/ValuesSection';
 import { TeamSection } from '@/components/TeamSection';
@@ -32,14 +33,17 @@ export default function Home() {
         {/* 1. Hero */}
         <HeroSection onOpenDemoModal={() => setDemoModalOpen(true)} />
 
-        {/* 1.5 Positioning */}
-        <PositioningSection />
-
-        {/* 2. Our Story */}
-        <StorySection />
+        {/* 2. What We Do */}
+        <WhatWeDoSection />
 
         {/* 3. Products */}
         <ProductsSection onSelectProduct={(prod) => setSelectedProduct(prod)} />
+
+        {/* 4. Cinematic Team Experience */}
+        <CinematicTeamSection />
+
+        {/* 5. Our Story */}
+        <StorySection />
 
         {/* 4. Vision & Mission */}
         <VisionMissionSection />

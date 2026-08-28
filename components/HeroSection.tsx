@@ -32,6 +32,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
   // Use a fallback for reduced motion
   const motionBackgroundY = prefersReducedMotion ? 0 : backgroundY;
   const motionScale = prefersReducedMotion ? 1 : 1.15;
+  
+  const dot1Y = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const dot2Y = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   return (
     <section
@@ -60,6 +63,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
         </motion.div>
         {/* Gradient overlay to ensure text readability on smaller screens */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAF9] dark:from-[#060D1A] via-[#FAFAF9]/90 dark:via-[#060D1A]/80 to-transparent w-full md:w-[60%]" />
+        
+        {/* Decorative Floating Elements */}
+        <motion.div 
+          className="absolute top-[20%] left-[60%] w-64 h-64 bg-[#1258AB]/10 dark:bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"
+          style={{ y: dot1Y }}
+        />
+        <motion.div 
+          className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-[#1258AB]/5 dark:bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"
+          style={{ y: dot2Y }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">

@@ -64,13 +64,13 @@ export const ValuesSection: React.FC = () => {
           {values.map((val, i) => (
             <motion.div
               key={val.id}
-              className="group p-6 rounded-2xl bg-white dark:bg-[#070B16] border border-stone-200 dark:border-[#101524] hover:border-stone-300 dark:hover:border-[#3A3A3A] hover:shadow-[0_4px_20px_rgb(0,0,0,0.05)] dark:hover:shadow-[0_4px_20px_rgb(0,0,0,0.3)] transition-all duration-300 space-y-4"
+              className="group p-6 rounded-2xl bg-white dark:bg-[#070B16] border border-stone-200 dark:border-[#101524] hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-[0_4px_20px_rgb(0,0,0,0.05)] dark:hover:shadow-[0_4px_20px_rgb(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 space-y-4"
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 + i * 0.08 }}
             >
               {/* Icon */}
-              <div className="p-2.5 w-fit rounded-xl bg-stone-50 dark:bg-[#00030E] border border-stone-100 dark:border-[#101524] text-stone-600 dark:text-stone-400 group-hover:text-[#1258AB] dark:group-hover:text-blue-400 group-hover:border-[#1258AB]/20 dark:group-hover:border-blue-500/20 transition-all">
+              <div className="p-2.5 w-fit rounded-xl bg-stone-50 dark:bg-[#00030E] border border-stone-100 dark:border-[#101524] text-stone-600 dark:text-stone-400 group-hover:text-[#1258AB] dark:group-hover:text-blue-400 group-hover:border-[#1258AB]/20 dark:group-hover:border-blue-500/20 group-hover:-translate-y-0.5 transition-all">
                 {ICONS[val.iconName] ?? <Target className="w-5 h-5" />}
               </div>
 

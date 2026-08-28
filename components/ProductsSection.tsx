@@ -11,7 +11,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 interface ProductsSectionProps {
   onSelectProduct: (product: Product) => void;
@@ -63,6 +63,22 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
   const { products } = companyData;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const card1Y = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [0, 0]);
+  const card2Y = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [-20, 20]);
+  const card3Y = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [15, -15]);
+
+  const getCardY = (index: number) => {
+    if (index % 3 === 0) return card1Y;
+    if (index % 3 === 1) return card2Y;
+    return card3Y;
+  };
 
   return (
     <section id="products" className="py-24 bg-[#FAFAF9] dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]">
@@ -107,11 +123,16 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
             return (
               <motion.div
                 key={product.id}
-                className={`group relative rounded-2xl border border-stone-200 dark:border-[#101524] bg-white dark:bg-[#070B16] p-6 flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.07)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.35)] ${colorCfg.accent} ${isSoon ? 'opacity-75 hover:opacity-90' : ''}`}
+                style={{ y: getCardY(i) }}
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 + i * 0.1 }}
               >
+                <motion.div
+                  className={`group relative h-full rounded-[1.25rem] border border-stone-200 dark:border-[#1A2235] bg-white dark:bg-[#070B16] p-6 flex flex-col transition-colors duration-300 shadow-sm ${colorCfg.accent} ${isSoon ? 'opacity-75 hover:opacity-90' : ''}`}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  transition={{ duration: 0.2 }}
+                >
                 {/* Icon + Status */}
                 <div className="flex items-start justify-between mb-5">
                   <div className={`p-2.5 rounded-xl ${colorCfg.icon} group-hover:scale-105 transition-transform`}>
@@ -164,6 +185,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 )}
+                </motion.div>
               </motion.div>
             );
           })}

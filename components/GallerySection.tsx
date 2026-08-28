@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { companyData, GalleryItem } from '@/data/companyData';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 interface GallerySectionProps {
   onSelectImage: (item: GalleryItem) => void;
@@ -21,6 +21,22 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
   const [activeCategory, setActiveCategory] = useState('all');
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-40px' });
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const y1 = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [-15, 15]);
+  const y2 = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [-30, 30]);
+  const y3 = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [20, -20]);
+
+  const getParallax = (index: number) => {
+    if (index % 3 === 0) return y1;
+    if (index % 3 === 1) return y2;
+    return y3;
+  };
 
   const filtered =
     activeCategory === 'all'
@@ -87,6 +103,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
                   onClick={() => onSelectImage(item)}
                   whileHover={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
+                  style={{ y: getParallax(i) }}
                 >
                   <img
                     src={item.imageUrl}
@@ -124,6 +141,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
                 onClick={() => onSelectImage(item)}
                 whileHover={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
+                style={{ y: getParallax(i) }}
               >
                 <img
                   src={item.imageUrl}
