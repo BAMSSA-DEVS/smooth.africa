@@ -79,8 +79,8 @@ export const StorySection: React.FC = () => {
               transition={{ duration: 0.65, delay: 0.3 }}
             >
                <motion.img 
-                 src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1600"
-                 alt="Collaborative problem solving"
+                 src="/story-team.jpg"
+                 alt="Smooth Africa team"
                  className="w-full h-full object-cover object-center origin-top scale-125"
                  style={{ y: imageY }}
                />
