@@ -23,7 +23,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
   return (
     <section
       id="contact"
-      className="py-20 lg:py-32 bg-[#090A0C] text-stone-100 border-t border-stone-900 overflow-hidden relative"
+      className="py-20 lg:py-32 bg-[#00030E] text-stone-100 border-t border-[#101524] overflow-hidden relative"
     >
       {/* Ambient background glow accents */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
@@ -33,7 +33,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
         <div ref={ref} className="flex flex-col justify-between min-h-[420px] lg:min-h-[500px]">
           
           {/* Top Header Row */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 border-b border-stone-800/60">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 border-b border-[#101524]">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -76,7 +76,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
           </div>
 
           {/* Bottom Interactive Bar */}
-          <div className="pt-8 border-t border-stone-800/60 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="pt-8 border-t border-[#101524] flex flex-col md:flex-row md:items-center justify-between gap-6">
             
             {/* Meta Details */}
             <div className="flex flex-wrap items-center gap-6 text-xs text-stone-400">
@@ -84,14 +84,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
                 <MapPin className="w-3.5 h-3.5 text-stone-500" />
                 <span>Headquarters: Lagos, Nigeria</span>
               </div>
-              <div className="hidden sm:block w-px h-3.5 bg-stone-800" />
+              <div className="hidden sm:block w-px h-3.5 bg-[#101524]" />
               <div className="hidden sm:flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                 <span>Response time: &lt; 24 hrs</span>
               </div>
             </div>
 
-            {/* Email Pill Button (Matches uploaded image design & interaction) */}
+            {/* Email Pill Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -100,7 +100,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
             >
               <a
                 href="mailto:hello@smooth.africa"
-                className="group inline-flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 border border-stone-800 text-stone-100 font-semibold text-sm sm:text-base transition-all duration-300 shadow-xl"
+                className="group inline-flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-[#070B16] hover:bg-[#0E1527] border border-[#1A2235] text-stone-100 font-semibold text-sm sm:text-base transition-all duration-300 shadow-xl"
               >
                 <span>hello@smooth.africa</span>
                 <div className="w-8 h-8 rounded-full bg-white text-stone-950 flex items-center justify-center group-hover:bg-[#1258AB] group-hover:text-white transition-all duration-300 group-hover:rotate-45">
@@ -112,7 +112,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               <button
                 onClick={handleCopyEmail}
                 title="Copy Email Address"
-                className="p-3.5 rounded-full bg-stone-900 hover:bg-stone-800 border border-stone-800 text-stone-400 hover:text-white transition-colors"
+                className="p-3.5 rounded-full bg-[#070B16] hover:bg-[#0E1527] border border-[#1A2235] text-stone-400 hover:text-white transition-colors"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
               </button>
