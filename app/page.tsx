@@ -5,7 +5,6 @@ import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
 import { WhatWeDoSection } from '@/components/WhatWeDoSection';
 import { ProductsSection } from '@/components/ProductsSection';
-import { CinematicTeamSection } from '@/components/CinematicTeamSection';
 import { StorySection } from '@/components/StorySection';
 import { VisionMissionSection } from '@/components/VisionMissionSection';
 import { ValuesSection } from '@/components/ValuesSection';
@@ -39,10 +38,7 @@ export default function Home() {
         {/* 3. Products */}
         <ProductsSection onSelectProduct={(prod) => setSelectedProduct(prod)} />
 
-        {/* 4. Cinematic Team Experience */}
-        <CinematicTeamSection />
-
-        {/* 5. Our Story */}
+        {/* 4. Our Story */}
         <StorySection />
 
         {/* 4. Vision & Mission */}
