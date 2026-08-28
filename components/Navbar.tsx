@@ -95,13 +95,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
             </button>
 
             {/* CTA — hidden on mobile */}
-            <button
-              onClick={onOpenDemoModal}
+            <a
+              href="mailto:hello@smooth.africa"
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-[13.5px] shadow-sm transition-all hover:shadow-md"
             >
-              Book a Demo
+              Contact Us
               <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
 
             {/* Mobile menu button */}
             <button
@@ -138,13 +138,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
                 ))}
               </nav>
               <div className="pt-3 mt-3 border-t border-stone-200 dark:border-[#2A2A2A]">
-                <button
-                  onClick={() => { setMobileMenuOpen(false); onOpenDemoModal(); }}
+                <a
+                  href="mailto:hello@smooth.africa"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-sm transition-all"
                 >
-                  Book a Demo
+                  Contact Us
                   <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
             </motion.div>
           )}
