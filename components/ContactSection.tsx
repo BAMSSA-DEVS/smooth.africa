@@ -57,7 +57,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
           </div>
 
           {/* Main Giant Typography ("Get in / Touch") matching the exact design */}
-          <div className="my-10 lg:my-16 select-none cursor-pointer" onClick={onOpenDemoModal}>
+          <a href="mailto:hello@smooth.africa" className="my-10 lg:my-16 select-none block cursor-pointer">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +73,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
                 Touch
               </span>
             </motion.h2>
-          </div>
+          </a>
 
           {/* Bottom Interactive Bar */}
           <div className="pt-8 border-t border-[#101524] flex flex-col md:flex-row md:items-center justify-between gap-6">
