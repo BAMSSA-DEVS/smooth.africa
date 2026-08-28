@@ -397,11 +397,11 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeProduct.id}
-                  initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 24, scale: 0.97 }}
-                  animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-                  exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -24, scale: 0.97 }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="w-full h-full grid grid-cols-12 gap-12 items-center"
+                  initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                  exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -20 }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  className="absolute inset-0 w-full h-full grid grid-cols-12 gap-12 items-center bg-[#FAFAF9] dark:bg-[#00030E] z-10"
                 >
                   {/* LEFT COLUMN: Product Text & Details (40-45% width -> 5 cols) */}
                   <div className="col-span-5 flex flex-col justify-center space-y-6">
