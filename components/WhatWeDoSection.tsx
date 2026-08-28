@@ -42,23 +42,23 @@ export const WhatWeDoSection: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Capabilities List */}
-          <div className="lg:col-span-5 space-y-10 lg:space-y-14 relative z-20">
+          <div className="lg:col-span-5 space-y-8 lg:space-y-10 relative z-20">
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 lg:pl-8 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
+              className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
-              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2.5 block">01 — DISCOVER</span>
-              <h3 className="font-heading text-xl lg:text-[1.4rem] font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-3">
+              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">01 — DISCOVER</span>
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
                 We start with the problem, the people experiencing it, and the context around it.
               </h3>
-              <p className="font-sans text-stone-600 dark:text-stone-400 text-base leading-relaxed">
-                We spend time understanding how people and organizations actually work before deciding what to build. We listen, research, question assumptions, and identify where technology can genuinely make a difference.
+              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
+                We take time to understand how people actually work before deciding what to build. The goal is to find where technology can make a meaningful difference.
               </p>
             </motion.div>
             
@@ -67,14 +67,14 @@ export const WhatWeDoSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 lg:pl-8 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
+              className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
-              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2.5 block">02 — BUILD</span>
-              <h3 className="font-heading text-xl lg:text-[1.4rem] font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-3">
+              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">02 — BUILD</span>
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
                 We turn those insights into thoughtful digital products designed for real-world use.
               </h3>
-              <p className="font-sans text-stone-600 dark:text-stone-400 text-base leading-relaxed">
-                From the first idea to the final interface, we bring product thinking, design, and technology together to create software that feels simple to use and purposeful to the people it serves.
+              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
+                We bring product thinking, design, and technology together to create software that feels simple, useful, and purposeful.
               </p>
             </motion.div>
             
@@ -83,14 +83,14 @@ export const WhatWeDoSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 lg:pl-8 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
+              className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
-              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2.5 block">03 — SCALE</span>
-              <h3 className="font-heading text-xl lg:text-[1.4rem] font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-3">
+              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">03 — SCALE</span>
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
                 We improve what works, learn from the people using it, and build for what comes next.
               </h3>
-              <p className="font-sans text-stone-600 dark:text-stone-400 text-base leading-relaxed">
-                A product doesn't end when it launches. We pay attention to how it's used, what isn't working, and where new opportunities emerge — continuously making our products more useful, reliable, and ready to grow.
+              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
+                Every product evolves. We listen, learn, and continuously improve what we build as the needs around it change.
               </p>
             </motion.div>
 
