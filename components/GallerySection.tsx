@@ -60,6 +60,14 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectImage })
           >
             Life at Smooth
           </motion.h2>
+          <motion.p
+            className="mt-4 text-stone-500 dark:text-stone-400 text-lg max-w-xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            A look at the people, ideas, and moments behind our products.
+          </motion.p>
         </div>
 
         {/* Category filter */}

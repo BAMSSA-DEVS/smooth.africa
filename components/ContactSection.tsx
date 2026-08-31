@@ -42,7 +42,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
             >
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-widest text-stone-400">
-                INITIATE A CONVERSATION
+                HAVE A PROBLEM WORTH SOLVING?
               </span>
             </motion.div>
 
@@ -52,7 +52,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-stone-400 text-sm max-w-sm"
             >
-              Have a problem worth solving? Tell us what you're trying to build or improve across Africa.
+              Let's build something people can trust.
             </motion.p>
           </div>
 
@@ -64,13 +64,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
               transition={{ duration: 0.7, delay: 0.15 }}
               className="font-heading font-extrabold text-[4.2rem] sm:text-[6.5rem] md:text-[8rem] lg:text-[10rem] xl:text-[11.5rem] leading-[0.88] tracking-tight group"
             >
-              {/* Line 1: Get in */}
+              {/* Line 1: Talk */}
               <span className="block bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent group-hover:brightness-110 transition-all duration-300">
-                Get in
+                Talk
               </span>
-              {/* Line 2: Touch */}
+              {/* Line 2: To Us */}
               <span className="block bg-gradient-to-r from-[#34D399] via-[#10B981] to-[#A3E635] bg-clip-text text-transparent group-hover:brightness-110 transition-all duration-300">
-                Touch
+                To Us
               </span>
             </motion.h2>
           </a>

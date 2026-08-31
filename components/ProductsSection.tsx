@@ -379,10 +379,10 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
             OUR PRODUCTS
           </span>
           <h2 className="font-heading mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight text-balance">
-            Software that does one thing, extremely well.
+            Different products. One belief.
           </h2>
           <p className="mt-4 text-stone-500 dark:text-stone-400 text-lg leading-relaxed max-w-2xl">
-            We build focused products that solve specific operational problems without forcing people into an ecosystem they didn't ask for.
+            We build focused digital products around the moments where participation matters — making experiences more transparent, secure, seamless, and reliable.
           </p>
         </motion.div>
       </div>

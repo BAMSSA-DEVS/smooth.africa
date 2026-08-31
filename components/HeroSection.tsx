@@ -89,8 +89,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               custom={0.1}
             >
               <h1 className="font-heading text-[2.6rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-extrabold leading-[1.08] tracking-tight text-stone-900 dark:text-stone-100 text-balance">
-                Building Africa's Next Generation of{' '}
-                <span className="text-[#1258AB]">Digital Products.</span>
+                Participation is everywhere.{' '}
+                <span className="text-[#1258AB]">Trust should be too.</span>
               </h1>
             </motion.div>
 

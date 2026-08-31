@@ -56,9 +56,9 @@ export interface TestimonialItem {
 
 export const companyData = {
   hero: {
-    headline: "Building Africa's Next Generation of Digital Products.",
+    headline: "Participation is everywhere. Trust should be too.",
     description:
-      "We design, build, and scale software that helps businesses, governments, and communities operate more efficiently across Africa.",
+      "Smooth Africa builds digital products and infrastructure that make participation more transparent, secure, seamless, and reliable.",
     cta1: "Explore Products",
     cta2: "Talk to Us",
   },
@@ -66,9 +66,12 @@ export const companyData = {
   story: {
     title: "Our Story",
     paragraphs: [
-      "Smooth Africa began from frustration with the unnecessary friction people and organizations encounter when technology doesn't reflect their reality.",
-      "We didn't start with a business plan. We started with a question: What if technology was designed around the realities of the people using it, rather than expecting people to adapt to the technology? That question became the foundation of everything we build.",
-      "Today, Smooth Africa builds practical digital products that simplify work, strengthen trust, and help organizations operate with greater confidence. As new challenges emerge, we'll continue building products intended to become useful infrastructure.",
+      "Every day, people participate in things that matter to them. They vote. They register. They compete. They attend. They contribute. They make decisions together.",
+      "But participation is only as strong as the system behind it. When the process isn't transparent, people question the outcome. When information isn't secure, people lose confidence. When systems are complicated or unreliable, participation itself becomes harder.",
+      "That is where Smooth Africa began. We came together around a simple belief: people should be able to participate without having to question the system they're participating through.",
+      "So we started building technology around three things we believe should never be compromised: Transparency. Trust. Security.",
+      "Today, Smooth Africa is building participation infrastructure — digital products that make it easier for people and organizations to participate, transact, decide, and engage with confidence.",
+      "Our products may serve different experiences, but they are connected by the same idea: Make participation smooth, seamless, and reliable. And we're only getting started."
     ],
   },
 
@@ -76,9 +79,9 @@ export const companyData = {
     {
       id: "smoothballot",
       name: "SmoothBallot",
-      tagline: "Digital election management platform.",
+      tagline: "Participation in voting and decision-making.",
       description:
-        "From candidate registration to results publication, SmoothBallot replaces paper-based electoral processes with a secure, auditable digital platform built for institutional use.",
+        "From candidate registration to results publication, SmoothBallot replaces paper-based electoral processes with a secure, auditable digital platform built for institutional trust.",
       status: "live" as const,
       iconName: "Vote",
       color: "blue",
@@ -94,9 +97,9 @@ export const companyData = {
     {
       id: "smoothcontest",
       name: "SmoothContest",
-      tagline: "Digital contest and pageant management.",
+      tagline: "Participation in digital contests and awards.",
       description:
-        "A dedicated platform for managing digital contests, awards, and pageants. Easily register contestants, collect votes securely, and showcase real-time leaderboards.",
+        "A dedicated platform for managing digital contests and pageants. Easily register contestants, collect votes securely, and showcase real-time leaderboards with complete transparency.",
       status: "live" as const,
       iconName: "Trophy",
       color: "amber",
@@ -112,9 +115,9 @@ export const companyData = {
     {
       id: "smoothticket",
       name: "SmoothTicket",
-      tagline: "Digital event ticketing and access management.",
+      tagline: "Participation in events and experiences.",
       description:
-        "A complete ticketing platform for African events. It handles secure ticket generation, real-time access control, and revenue analytics all in one place.",
+        "A complete ticketing platform for African events. It handles secure ticket generation, real-time access control, and revenue analytics, making event participation seamless and reliable.",
       status: "live" as const,
       iconName: "Ticket",
       color: "emerald",
@@ -132,13 +135,13 @@ export const companyData = {
   visionMission: {
     vision: {
       title: "Vision",
-      statement: "A future where great technology is built around Africa's realities, not around assumptions made elsewhere.",
-      detail: "We see a continent where the quality of your software doesn't determine whether your organization succeeds. Where paper and guesswork are replaced by systems that just work.",
+      statement: "A world where participation can be trusted.",
+      detail: "We envision systems where people can engage, contribute, make decisions, and connect without uncertainty about the process behind them.",
     },
     mission: {
       title: "Mission",
-      statement: "We build practical digital products that solve meaningful problems and make complex experiences simpler.",
-      detail: "Every product we build has to answer this: does it make the work genuinely easier? We hold that question over every feature, every screen, every decision.",
+      statement: "Make participation smooth, seamless, and reliable.",
+      detail: "We build technology that brings transparency, trust, and security into the everyday systems people rely on to participate.",
     },
   },
 
@@ -185,7 +188,7 @@ export const companyData = {
       id: "founder-1",
       name: "Prince (Onyekachukwu) Ogbonna",
       role: "Co-Founder & Team Lead",
-      bio: "Prince drives the strategic vision at Smooth Africa. With a deep passion for solving complex operational challenges through elegant digital products, he leads the team in building tools that empower African organizations to operate with greater efficiency and transparency.",
+      bio: "Prince drives the strategic vision at Smooth Africa. With a deep passion for solving complex operational challenges, he leads the team in building systems that empower people to participate with transparency and confidence.",
       image: "/team/prince.jpg",
       linkedin: "https://www.linkedin.com/in/prince-ogbonna-7436041b8/",
       email: "hello@smooth.africa",
@@ -194,7 +197,7 @@ export const companyData = {
       id: "founder-2",
       name: "Emmanuel Asante",
       role: "Co-Founder & CTO",
-      bio: "Software engineer and systems architect. Previously led engineering at two venture-backed startups in Accra. Believes most software is far more complicated than it needs to be.",
+      bio: "Software engineer and systems architect. Previously led engineering at two venture-backed startups in Accra. Believes participation infrastructure should be fundamentally reliable and secure.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
       linkedin: "#",
@@ -204,7 +207,7 @@ export const companyData = {
       id: "member-3",
       name: "Fatima Al-Rashid",
       role: "Head of Product",
-      bio: "UX researcher turned product manager. Spent three years studying how SMEs in East Africa manage operations before joining Smooth Africa to help fix what she found.",
+      bio: "UX researcher turned product manager. Spent three years studying how communities in East Africa manage participation before joining Smooth Africa to build systems they can actually trust.",
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
       linkedin: "#",
@@ -214,7 +217,7 @@ export const companyData = {
       id: "member-4",
       name: "Kwame Boateng",
       role: "Lead Engineer",
-      bio: "Full-stack engineer with deep expertise in offline-first architectures and mobile systems. Builds the parts of our products that work even when the internet doesn't.",
+      bio: "Full-stack engineer with deep expertise in offline-first architectures. Builds the core infrastructure that keeps our products seamless and reliable even when the internet isn't.",
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
       linkedin: "#",
@@ -224,7 +227,7 @@ export const companyData = {
       id: "member-5",
       name: "Amina Diallo",
       role: "Head of Customer Success",
-      bio: "Former operations manager who switched sides. Understands exactly what it's like to depend on software that wasn't built for your context, and makes sure our customers never feel that way.",
+      bio: "Former operations manager who switched sides. Understands exactly what it's like to depend on systems you can't trust, and ensures our users never have to experience that uncertainty.",
       image:
         "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
       linkedin: "#",
@@ -234,7 +237,7 @@ export const companyData = {
       id: "member-6",
       name: "Chidi Nwachukwu",
       role: "Design Lead",
-      bio: "Visual and interaction designer obsessed with clarity. If a screen has more elements than it needs, Chidi will find them and remove them. Studied architecture before switching to software design.",
+      bio: "Visual and interaction designer obsessed with clarity. Believes that for a system to be trusted, it must first be understood. Studied architecture before switching to software design.",
       image:
         "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=600&q=80",
       linkedin: "#",

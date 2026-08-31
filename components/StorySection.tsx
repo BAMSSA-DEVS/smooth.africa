@@ -33,17 +33,17 @@ export const StorySection: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <span className="text-xs font-semibold uppercase tracking-widest text-[#1258AB] dark:text-blue-400">
-              Our Story
+              OUR STORY
             </span>
             <h2 className="font-heading mt-3 text-3xl sm:text-4xl font-extrabold text-stone-900 dark:text-stone-100 leading-tight tracking-tight">
-              Why Smooth Africa exists.
+              We came together to make participation something people can trust.
             </h2>
             <div className="mt-6 w-8 h-[3px] rounded-full bg-[#1258AB]" />
 
             {/* Editorial pull quote */}
             <blockquote className="mt-8 pl-4 border-l-2 border-stone-200 dark:border-[#101524]">
               <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed italic">
-                "We didn't start with a business plan. We started with a question."
+                "Participation is only as strong as the system behind it."
               </p>
             </blockquote>
           </motion.div>

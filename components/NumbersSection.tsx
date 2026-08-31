@@ -69,7 +69,7 @@ export const NumbersSection: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.08 }}
           >
-            We're already in motion.
+            Building trust at scale.
           </motion.h2>
         </div>
 

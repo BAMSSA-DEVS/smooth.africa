@@ -25,10 +25,10 @@ export const VisionMissionSection: React.FC = () => {
           className="mb-14"
         >
           <span className="text-xs font-semibold uppercase tracking-widest text-[#1258AB] dark:text-blue-400">
-            Direction
+            OUR VISION
           </span>
           <h2 className="font-heading mt-3 text-3xl sm:text-4xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight">
-            Vision &amp; Mission
+            A world where participation can be trusted.
           </h2>
         </motion.div>
 

@@ -35,10 +35,10 @@ export const WhatWeDoSection: React.FC = () => {
             WHAT WE DO
           </span>
           <h2 className="mt-4 font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight text-balance">
-            We turn real problems into useful technology.
+            We build infrastructure for participation.
           </h2>
           <p className="mt-6 text-stone-500 dark:text-stone-400 text-lg md:text-xl leading-relaxed">
-            Smooth Africa designs, builds, and scales digital products that make complex experiences simpler — for businesses, institutions, and communities across Africa.
+            Smooth Africa creates digital products that make participation more transparent, secure, and reliable — helping people and organizations engage with confidence.
           </p>
         </motion.div>
 
@@ -53,13 +53,10 @@ export const WhatWeDoSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
-              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">01 — DISCOVER</span>
-              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
-                We start with the problem, the people experiencing it, and the context around it.
+              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">01 — MAKE IT TRUSTED</span>
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
+                We design systems where people can understand what is happening, verify outcomes, and participate with confidence.
               </h3>
-              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
-                We take time to understand how people actually work before deciding what to build. The goal is to find where technology can make a meaningful difference.
-              </p>
             </motion.div>
             
             <motion.div 
@@ -69,13 +66,10 @@ export const WhatWeDoSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
-              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">02 — BUILD</span>
-              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
-                We turn those insights into thoughtful digital products designed for real-world use.
+              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">02 — MAKE IT SIMPLE</span>
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
+                We remove unnecessary friction so participation feels natural, accessible, and smooth.
               </h3>
-              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
-                We bring product thinking, design, and technology together to create software that feels simple, useful, and purposeful.
-              </p>
             </motion.div>
             
             <motion.div 
@@ -85,13 +79,10 @@ export const WhatWeDoSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
-              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">03 — SCALE</span>
-              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
-                We improve what works, learn from the people using it, and build for what comes next.
+              <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">03 — MAKE IT RELIABLE</span>
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
+                We build infrastructure people can depend on when participation matters.
               </h3>
-              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
-                Every product evolves. We listen, learn, and continuously improve what we build as the needs around it change.
-              </p>
             </motion.div>
 
           </div>
