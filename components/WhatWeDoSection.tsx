@@ -54,9 +54,12 @@ export const WhatWeDoSection: React.FC = () => {
               className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
               <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">01 — MAKE IT TRUSTED</span>
-              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
                 We design systems where people can understand what is happening, verify outcomes, and participate with confidence.
               </h3>
+              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
+                Every important action should have a clear process behind it, with the right information available to the people who depend on it. We build with transparency in mind so trust is not something users are simply asked to give — it is something the system earns.
+              </p>
             </motion.div>
             
             <motion.div 
@@ -67,9 +70,12 @@ export const WhatWeDoSection: React.FC = () => {
               className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
               <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">02 — MAKE IT SIMPLE</span>
-              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
                 We remove unnecessary friction so participation feels natural, accessible, and smooth.
               </h3>
+              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
+                Complexity should exist in the infrastructure, not in the experience. Whether someone is making a decision, completing a process, or engaging with an organization, we focus on making every step clear, intuitive, and easy to navigate without taking away the depth the system needs.
+              </p>
             </motion.div>
             
             <motion.div 
@@ -80,9 +86,12 @@ export const WhatWeDoSection: React.FC = () => {
               className="group border-l-2 border-stone-200 dark:border-[#2A2A2A] pl-6 hover:border-[#1258AB] dark:hover:border-blue-500 transition-colors duration-300"
             >
               <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">03 — MAKE IT RELIABLE</span>
-              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
+              <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
                 We build infrastructure people can depend on when participation matters.
               </h3>
+              <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
+                The systems behind important moments need to work consistently, protect what matters, and remain dependable as more people rely on them. We think beyond simply making something work today — we build products that can be trusted to keep working as they grow, evolve, and become part of everyday life.
+              </p>
             </motion.div>
 
           </div>
