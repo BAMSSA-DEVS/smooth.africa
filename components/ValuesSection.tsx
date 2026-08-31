@@ -64,7 +64,7 @@ export const ValuesSection: React.FC = () => {
           {values.map((val, i) => (
             <motion.div
               key={val.id}
-              className="group min-w-[85vw] sm:min-w-0 shrink-0 snap-center p-6 rounded-2xl bg-white dark:bg-[#070B16] border border-stone-200 dark:border-[#101524] hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-[0_4px_20px_rgb(0,0,0,0.05)] dark:hover:shadow-[0_4px_20px_rgb(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 space-y-4"
+              className="group w-[82vw] sm:w-auto shrink-0 snap-start p-6 rounded-2xl bg-white dark:bg-[#070B16] border border-stone-200 dark:border-[#101524] hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-[0_4px_20px_rgb(0,0,0,0.05)] dark:hover:shadow-[0_4px_20px_rgb(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 space-y-4"
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 + i * 0.08 }}
