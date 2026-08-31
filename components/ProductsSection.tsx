@@ -106,15 +106,15 @@ const SmoothBallotVisual: React.FC = () => {
   const parallaxY = useTransform(scrollYProgress, [0, 1], [15, -15]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-3 sm:p-6 lg:p-8 relative group perspective-[1000px]">
+    <div className="w-full h-full flex items-center justify-center p-2 sm:p-6 lg:p-8 relative group perspective-[1000px]">
       <motion.div
         style={{ y: prefersReducedMotion ? 0 : parallaxY }}
         className="w-full flex items-center justify-center"
       >
         <motion.div
-          className="relative w-full aspect-[16/10] max-w-2xl rounded-xl sm:rounded-[1.25rem] border-[3px] sm:border-[8px] border-stone-200/80 dark:border-stone-800 shadow-xl dark:shadow-2xl bg-white dark:bg-stone-950 overflow-hidden transition-all duration-700 ease-out lg:group-hover:scale-[1.015] lg:group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:lg:group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)]"
+          className="relative w-full max-w-2xl transition-transform duration-700 ease-out lg:group-hover:scale-[1.015]"
           animate={prefersReducedMotion ? {} : {
-            y: [0, -5, 0],
+            y: [0, -6, 0],
             rotate: [-0.3, 0.3, -0.3],
           }}
           transition={{
@@ -123,14 +123,13 @@ const SmoothBallotVisual: React.FC = () => {
             ease: "easeInOut"
           }}
         >
-          {/* Inner bezel shadow for depth */}
-          <div className="absolute inset-0 z-10 pointer-events-none shadow-[inset_0_0_10px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_0_20px_rgba(0,0,0,0.4)] rounded-[6px] sm:rounded-lg" />
           <Image
-            src="/images/products/smoothballot-screenshot.jpg"
-            alt="SmoothBallot Dashboard"
-            fill
-            className="object-cover object-left-top rounded-[6px] sm:rounded-lg"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            src="/images/products/smoothballot-final-mockup.png"
+            alt="SmoothBallot Mockup"
+            width={1600}
+            height={1200}
+            className="w-full h-auto object-contain drop-shadow-2xl dark:drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
+            sizes="(max-width: 768px) 100vw, 60vw"
             quality={100}
             priority
           />
