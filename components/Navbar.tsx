@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
             />
             {/* Dark Mode Logo */}
             <img 
-              src="/logo-dark.png" 
+              src="/logo-dark.png?v=2" 
               alt="Smooth Africa Logo" 
               className="hidden dark:block w-[125px] sm:w-[135px] lg:w-[150px] h-auto object-contain transition-transform group-hover:opacity-90"
             />
