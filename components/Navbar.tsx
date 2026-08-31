@@ -38,7 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        mobileMenuOpen
+          ? 'bg-[#FFFFFF] dark:bg-[#00030E] border-b border-stone-200/80 dark:border-[#2A2A2A] shadow-sm'
+          : scrolled
           ? 'bg-white/92 dark:bg-[#141414]/92 backdrop-blur-xl border-b border-stone-200/80 dark:border-[#2A2A2A] shadow-sm'
           : 'bg-transparent'
       }`}
