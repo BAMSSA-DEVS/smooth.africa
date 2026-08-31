@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   Vote,
   Trophy,
@@ -99,83 +100,45 @@ const SHOWCASE_PRODUCTS: ShowcaseProductData[] = [
 ];
 
 // Product Interface Mockup Visuals
-const SmoothBallotVisual: React.FC = () => (
-  <div className="w-full h-full p-4 sm:p-6 flex flex-col justify-between bg-stone-900 text-stone-100 rounded-2xl border border-stone-800 shadow-2xl relative overflow-hidden">
-    {/* Top Header */}
-    <div className="flex items-center justify-between pb-4 border-b border-stone-800">
-      <div className="flex items-center gap-3">
-        <div className="p-2 rounded-lg bg-[#1258AB] text-white">
-          <Vote className="w-5 h-5" />
-        </div>
-        <div>
-          <h4 className="font-heading text-sm font-bold text-white">Faculty Electoral Commission 2026</h4>
-          <p className="text-[11px] text-stone-400">Live Election Dashboard • Audit Active</p>
-        </div>
-      </div>
-      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-        Voting Open
-      </span>
-    </div>
+const SmoothBallotVisual: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [15, -15]);
 
-    {/* Metrics Bar */}
-    <div className="grid grid-cols-3 gap-3 my-4">
-      <div className="p-3 rounded-xl bg-stone-800/60 border border-stone-700/50">
-        <p className="text-[11px] text-stone-400">Total Votes Cast</p>
-        <p className="font-heading text-lg font-bold text-white mt-0.5">14,892</p>
-      </div>
-      <div className="p-3 rounded-xl bg-stone-800/60 border border-stone-700/50">
-        <p className="text-[11px] text-stone-400">Turnout Rate</p>
-        <p className="font-heading text-lg font-bold text-blue-400 mt-0.5">88.4%</p>
-      </div>
-      <div className="p-3 rounded-xl bg-stone-800/60 border border-stone-700/50">
-        <p className="text-[11px] text-stone-400">Integrity Score</p>
-        <p className="font-heading text-lg font-bold text-emerald-400 mt-0.5">100% Verified</p>
-      </div>
+  return (
+    <div className="w-full h-full flex items-center justify-center p-3 sm:p-6 lg:p-8 relative group perspective-[1000px]">
+      <motion.div
+        style={{ y: prefersReducedMotion ? 0 : parallaxY }}
+        className="w-full flex items-center justify-center"
+      >
+        <motion.div
+          className="relative w-full aspect-[16/10] max-w-2xl rounded-xl sm:rounded-[1.25rem] border-[3px] sm:border-[8px] border-stone-200/80 dark:border-stone-800 shadow-xl dark:shadow-2xl bg-white dark:bg-stone-950 overflow-hidden transition-all duration-700 ease-out lg:group-hover:scale-[1.015] lg:group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:lg:group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)]"
+          animate={prefersReducedMotion ? {} : {
+            y: [0, -5, 0],
+            rotate: [-0.3, 0.3, -0.3],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          {/* Inner bezel shadow for depth */}
+          <div className="absolute inset-0 z-10 pointer-events-none shadow-[inset_0_0_10px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_0_20px_rgba(0,0,0,0.4)] rounded-[6px] sm:rounded-lg" />
+          <Image
+            src="/images/products/smoothballot-screenshot.jpg"
+            alt="SmoothBallot Dashboard"
+            fill
+            className="object-cover object-left-top rounded-[6px] sm:rounded-lg"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={100}
+            priority
+          />
+        </motion.div>
+      </motion.div>
     </div>
-
-    {/* Live Candidate Tally */}
-    <div className="space-y-3 flex-1 justify-center flex flex-col">
-      <div className="p-3.5 rounded-xl bg-stone-800/40 border border-stone-700/40 space-y-2">
-        <div className="flex justify-between text-xs">
-          <span className="font-semibold text-stone-200 flex items-center gap-1.5">
-            Candidate A — Presidential
-            <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 inline" />
-          </span>
-          <span className="font-bold text-stone-300">8,420 votes (56.5%)</span>
-        </div>
-        <div className="w-full bg-stone-700/50 h-2 rounded-full overflow-hidden">
-          <div className="bg-[#1258AB] h-full rounded-full w-[56.5%]" />
-        </div>
-      </div>
-
-      <div className="p-3.5 rounded-xl bg-stone-800/40 border border-stone-700/40 space-y-2">
-        <div className="flex justify-between text-xs">
-          <span className="font-semibold text-stone-200">Candidate B — Presidential</span>
-          <span className="font-bold text-stone-300">6,472 votes (43.5%)</span>
-        </div>
-        <div className="w-full bg-stone-700/50 h-2 rounded-full overflow-hidden">
-          <div className="bg-stone-500 h-full rounded-full w-[43.5%]" />
-        </div>
-      </div>
-    </div>
-
-    {/* Bottom Status Ticker */}
-    <div className="pt-3 border-t border-stone-800 flex items-center justify-between text-[11px] text-stone-400">
-      <span className="flex items-center gap-1.5">
-        <Lock className="w-3.5 h-3.5 text-blue-400" />
-        Cryptographically Encrypted Ballots
-      </span>
-      <span>Last sync: 2 sec ago</span>
-    </div>
-
-    {/* Floating Toast Accent */}
-    <div className="absolute bottom-16 right-6 px-3 py-2 rounded-lg bg-[#1258AB] text-white text-xs font-semibold shadow-lg flex items-center gap-2 border border-blue-400/30">
-      <ShieldCheck className="w-4 h-4 text-emerald-300" />
-      <span>Audit Trail Synchronized</span>
-    </div>
-  </div>
-);
+  );
+};
 
 const SmoothContestVisual: React.FC = () => (
   <div className="w-full h-full p-4 sm:p-6 flex flex-col justify-between bg-stone-900 text-stone-100 rounded-2xl border border-stone-800 shadow-2xl relative overflow-hidden">
