@@ -55,10 +55,10 @@ export const WhatWeDoSection: React.FC = () => {
             >
               <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">01 — MAKE IT TRUSTED</span>
               <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
-                We design systems where people can understand what is happening, verify outcomes, and participate with confidence.
+                We design systems people can understand, verify, and trust.
               </h3>
               <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
-                Every important action should have a clear process behind it, with the right information available to the people who depend on it. We build with transparency in mind so trust is not something users are simply asked to give — it is something the system earns.
+                Every important action should be clear and transparent, giving people the information they need to participate with confidence. We build trust into the experience, not as an afterthought.
               </p>
             </motion.div>
             
@@ -71,10 +71,10 @@ export const WhatWeDoSection: React.FC = () => {
             >
               <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">02 — MAKE IT SIMPLE</span>
               <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
-                We remove unnecessary friction so participation feels natural, accessible, and smooth.
+                We remove friction so participation feels natural and effortless.
               </h3>
               <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
-                Complexity should exist in the infrastructure, not in the experience. Whether someone is making a decision, completing a process, or engaging with an organization, we focus on making every step clear, intuitive, and easy to navigate without taking away the depth the system needs.
+                Complexity belongs in the infrastructure, not the experience. We make every step clear, intuitive, and easy to navigate without compromising what the system needs.
               </p>
             </motion.div>
             
@@ -87,10 +87,10 @@ export const WhatWeDoSection: React.FC = () => {
             >
               <span className="font-heading text-xs font-bold text-[#1258AB] dark:text-blue-400 uppercase tracking-widest mb-2 block">03 — MAKE IT RELIABLE</span>
               <h3 className="font-heading text-lg lg:text-xl font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight mb-2">
-                We build infrastructure people can depend on when participation matters.
+                We build products people can depend on when participation matters.
               </h3>
               <p className="font-sans text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
-                The systems behind important moments need to work consistently, protect what matters, and remain dependable as more people rely on them. We think beyond simply making something work today — we build products that can be trusted to keep working as they grow, evolve, and become part of everyday life.
+                Our systems are designed to work consistently, protect what matters, and remain dependable as they grow. We build for today while preparing for what comes next.
               </p>
             </motion.div>
 
