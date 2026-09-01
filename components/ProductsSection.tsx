@@ -329,7 +329,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
   return (
     <section id="products" className="bg-[#FAFAF9] dark:bg-[#00030E] border-t border-stone-100 dark:border-[#101524]">
       {/* ─── SECTION INTRO (Concise) ─── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-2">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -351,11 +351,11 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
 
       {/* ─── DESKTOP SCROLL-DRIVEN SHOWCASE (sticky pinned container) ─── */}
       <div ref={containerRef} className="hidden lg:block relative h-[300vh]">
-        <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        <div className="sticky top-0 h-screen flex items-start pt-12 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative">
             
             {/* Stage Container */}
-            <div className="relative min-h-[580px] h-[78vh] max-h-[720px] w-full flex items-center">
+            <div className="relative min-h-[500px] h-[72vh] max-h-[680px] w-full flex items-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeProduct.id}
@@ -487,7 +487,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
       </div>
 
       {/* ─── MOBILE & TABLET STACKED PRODUCT SHOWCASE ─── */}
-      <div className="lg:hidden max-w-7xl mx-auto px-4 sm:px-6 space-y-16 pb-16">
+      <div className="lg:hidden max-w-7xl mx-auto px-4 sm:px-6 space-y-10 pb-12">
         {SHOWCASE_PRODUCTS.map((prod) => (
           <motion.div
             key={`mobile-${prod.id}`}
