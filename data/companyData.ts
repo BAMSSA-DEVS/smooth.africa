@@ -195,13 +195,12 @@ export const companyData = {
     },
     {
       id: "founder-2",
-      name: "Emmanuel Asante",
-      role: "Co-Founder & CTO",
-      bio: "Software engineer and systems architect. Previously led engineering at two venture-backed startups in Accra. Believes participation infrastructure should be fundamentally reliable and secure.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-      linkedin: "#",
-      email: "emmanuel@smooth.africa",
+      name: "Owoade Anuoluwapo",
+      role: "Co-founder and CTO",
+      bio: "A Software Engineer with five years of experience in building intuitive web applications with technologies like Typescript, React.Js and Node.Js. Has a track record of exceeding goals and paying close attention to details as well as experience working remotely and cooperating with engineering teams.",
+      image: "/images/team/owoade-anuoluwapo.jpg",
+      linkedin: "https://www.linkedin.com/in/owoade-anuoluwapo-a09a03235/",
+      email: "owoade@smooth.africa",
     },
     {
       id: "member-3",
