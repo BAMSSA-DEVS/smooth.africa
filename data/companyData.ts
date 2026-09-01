@@ -213,13 +213,12 @@ export const companyData = {
     },
     {
       id: "member-4",
-      name: "Kwame Boateng",
-      role: "Lead Engineer",
-      bio: "Full-stack engineer with deep expertise in offline-first architectures. Builds the core infrastructure that keeps our products seamless and reliable even when the internet isn't.",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-      linkedin: "#",
-      email: "kwame@smooth.africa",
+      name: "Oluwafemi Araoye",
+      role: "Co-Founder & Frontend Engineer",
+      bio: "Front-End Developer with 5+ years of experience building responsive and user-friendly web and mobile interfaces for startups, nonprofits, and enterprises across Africa, Europe, and the UK. Skilled in crafting high-performance front-end solutions using React, Next.js, and Tailwind CSS, with a focus on enhancing user experience. Adept at collaborating with cross-functional teams to deliver engaging and efficient applications that drive business growth.",
+      image: "/images/team/oluwafemi-araoye.jpg",
+      linkedin: "https://www.linkedin.com/in/oluwafemiaraoye/",
+      email: "femi@smooth.africa",
     },
     {
       id: "member-5",
