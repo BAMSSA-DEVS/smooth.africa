@@ -204,13 +204,12 @@ export const companyData = {
     },
     {
       id: "member-3",
-      name: "Fatima Al-Rashid",
-      role: "Head of Product",
-      bio: "UX researcher turned product manager. Spent three years studying how communities in East Africa manage participation before joining Smooth Africa to build systems they can actually trust.",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
-      linkedin: "#",
-      email: "fatima@smooth.africa",
+      name: "Ilerioluwa Adebayo",
+      role: "Co-founder & Design Lead",
+      bio: "Ileri is a product designer and entrepreneur with a strong focus on creating intentional, user-centered digital experiences. Since 2022, she has designed and shipped end-to-end products, led design for early-stage startups, and transformed complex ideas into clear, scalable solutions. Her approach combines creativity, experimentation, and a deep commitment to clarity, speed, and frictionless product experiences.",
+      image: "/images/team/ilerioluwa-adebayo.jpg",
+      linkedin: "https://www.linkedin.com/in/ilerioluwaadebayo/",
+      email: "ileri@smooth.africa",
     },
     {
       id: "member-4",
