@@ -74,7 +74,7 @@ export const NumbersSection: React.FC = () => {
         </div>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-stone-100 dark:bg-[#101524] rounded-2xl overflow-hidden border border-stone-100 dark:border-[#101524]">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-100 dark:bg-[#101524] rounded-2xl overflow-hidden border border-stone-100 dark:border-[#101524]">
           {metrics.map((metric, i) => (
             <motion.div
               key={metric.id}
