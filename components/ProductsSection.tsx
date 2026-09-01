@@ -106,10 +106,10 @@ const SmoothBallotVisual: React.FC = () => {
   const parallaxY = useTransform(scrollYProgress, [0, 1], [15, -15]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-2 sm:p-6 lg:p-8 relative group perspective-[1000px]">
+    <div className="w-full h-full rounded-[1.5rem] lg:rounded-[2rem] p-6 sm:p-10 lg:p-12 bg-gradient-to-br from-[#e8f1f9] to-[#cde0f3] dark:bg-none dark:bg-[#00030E] border-2 border-[#1258AB] flex items-center justify-center relative overflow-hidden shadow-[0_20px_50px_-15px_rgba(18,88,171,0.25)] dark:shadow-[0_20px_50px_-15px_rgba(18,88,171,0.4)] group perspective-[1000px]">
       <motion.div
         style={{ y: prefersReducedMotion ? 0 : parallaxY }}
-        className="w-full flex items-center justify-center"
+        className="w-full flex items-center justify-center relative z-10"
       >
         <motion.div
           className="relative w-full max-w-2xl transition-transform duration-700 ease-out lg:group-hover:scale-[1.015]"
@@ -125,7 +125,7 @@ const SmoothBallotVisual: React.FC = () => {
         >
           <Image
             src="/images/products/smoothballot-final-mockup.png"
-            alt="SmoothBallot Mockup"
+            alt="SmoothBallot digital election management platform"
             width={1600}
             height={1200}
             className="w-full h-auto object-contain drop-shadow-2xl dark:drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
@@ -442,9 +442,15 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
 
                   {/* RIGHT COLUMN: Product Interface Visual (55-60% width -> 7 cols) */}
                   <div className="col-span-7 h-full min-h-[440px] max-h-[600px] w-full p-2">
-                    <div className="w-full h-full rounded-2xl p-2 bg-gradient-to-b from-stone-200/50 to-stone-300/30 dark:from-stone-800/40 dark:to-stone-900/60 border border-stone-200 dark:border-stone-800/80 shadow-xl">
-                      {RENDER_VISUAL(activeProduct.visualType)}
-                    </div>
+                    {activeProduct.visualType === 'smoothballot' ? (
+                      <div className="w-full h-full">
+                        {RENDER_VISUAL(activeProduct.visualType)}
+                      </div>
+                    ) : (
+                      <div className="w-full h-full rounded-2xl p-2 bg-gradient-to-b from-stone-200/50 to-stone-300/30 dark:from-stone-800/40 dark:to-stone-900/60 border border-stone-200 dark:border-stone-800/80 shadow-xl">
+                        {RENDER_VISUAL(activeProduct.visualType)}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               </AnimatePresence>
