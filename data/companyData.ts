@@ -231,13 +231,12 @@ export const companyData = {
     },
     {
       id: "member-6",
-      name: "Chidi Nwachukwu",
-      role: "Design Lead",
-      bio: "Visual and interaction designer obsessed with clarity. Believes that for a system to be trusted, it must first be understood. Studied architecture before switching to software design.",
-      image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=600&q=80",
-      linkedin: "#",
-      email: "chidi@smooth.africa",
+      name: "Samuel Ibitoye",
+      role: "Co-founder & Frontend Lead",
+      bio: "Samuel is a Frontend Software Engineer focused on building modern, responsive, and high-performance web applications. His expertise spans React, Next.js, TypeScript, JavaScript, Tailwind CSS, and REST APIs, with experience across fintech, e-commerce, logistics, and digital voting platforms. He specializes in creating scalable interfaces, integrating APIs, optimizing performance, and turning complex requirements into seamless digital experiences.",
+      image: "/images/team/samuel-ibitoye.jpg",
+      linkedin: "https://www.linkedin.com/in/samuel-ibitoye-328850420/",
+      email: "samuel@smooth.africa",
     },
   ] as TeamMember[],
 
