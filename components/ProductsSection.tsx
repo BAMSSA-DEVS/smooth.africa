@@ -139,95 +139,44 @@ const SmoothBallotVisual: React.FC = () => {
   );
 };
 
-const SmoothContestVisual: React.FC = () => (
-  <div className="w-full h-full p-4 sm:p-6 flex flex-col justify-between bg-stone-900 text-stone-100 rounded-2xl border border-stone-800 shadow-2xl relative overflow-hidden">
-    {/* Top Header */}
-    <div className="flex items-center justify-between pb-4 border-b border-stone-800">
-      <div className="flex items-center gap-3">
-        <div className="p-2 rounded-lg bg-amber-500 text-stone-950">
-          <Trophy className="w-5 h-5" />
-        </div>
-        <div>
-          <h4 className="font-heading text-sm font-bold text-white">Miss Campus West Africa 2026</h4>
-          <p className="text-[11px] text-stone-400">Live Voting Portal & Leaderboard</p>
-        </div>
-      </div>
-      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-        <Sparkles className="w-3 h-3 text-amber-400" />
-        Final Round
-      </span>
+const SmoothContestVisual: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [15, -15]);
+
+  return (
+    <div className="w-full h-full flex items-center justify-center relative overflow-hidden group perspective-[1000px]">
+      <motion.div
+        style={{ y: prefersReducedMotion ? 0 : parallaxY }}
+        className="w-full flex items-center justify-center relative z-10"
+      >
+        <motion.div
+          className="relative w-full max-w-3xl transition-transform duration-700 ease-out lg:group-hover:scale-[1.015]"
+          animate={prefersReducedMotion ? {} : {
+            y: [0, -6, 0],
+            rotate: [-0.3, 0.3, -0.3],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Image
+            src="/images/products/smoothcontest-final-mockup.png"
+            alt="SmoothContest digital contest management platform"
+            width={1600}
+            height={1200}
+            className="w-full h-auto object-contain"
+            sizes="(max-width: 768px) 100vw, 60vw"
+            quality={100}
+            priority
+          />
+        </motion.div>
+      </motion.div>
     </div>
-
-    {/* Leaderboard Cards */}
-    <div className="space-y-3 my-auto">
-      <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="font-heading text-sm font-extrabold text-amber-400 w-5">#1</span>
-          <div className="w-9 h-9 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-bold text-amber-300 text-xs">
-            AO
-          </div>
-          <div>
-            <p className="font-heading text-xs font-bold text-white">Amina Okafor</p>
-            <p className="text-[10px] text-amber-300/80">Contestant #04</p>
-          </div>
-        </div>
-        <div className="text-right">
-          <p className="font-heading text-sm font-bold text-amber-400">45,210</p>
-          <p className="text-[10px] text-stone-400">Verified Votes</p>
-        </div>
-      </div>
-
-      <div className="p-3 rounded-xl bg-stone-800/50 border border-stone-700/50 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="font-heading text-sm font-bold text-stone-400 w-5">#2</span>
-          <div className="w-8 h-8 rounded-full bg-stone-700 flex items-center justify-center font-bold text-stone-300 text-xs">
-            CK
-          </div>
-          <div>
-            <p className="font-heading text-xs font-bold text-stone-200">Chiege Kalu</p>
-            <p className="text-[10px] text-stone-400">Contestant #09</p>
-          </div>
-        </div>
-        <div className="text-right">
-          <p className="font-heading text-sm font-bold text-stone-200">38,150</p>
-          <p className="text-[10px] text-stone-400">Verified Votes</p>
-        </div>
-      </div>
-
-      <div className="p-3 rounded-xl bg-stone-800/50 border border-stone-700/50 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="font-heading text-sm font-bold text-stone-400 w-5">#3</span>
-          <div className="w-8 h-8 rounded-full bg-stone-700 flex items-center justify-center font-bold text-stone-300 text-xs">
-            FA
-          </div>
-          <div>
-            <p className="font-heading text-xs font-bold text-stone-200">Farida Ababio</p>
-            <p className="text-[10px] text-stone-400">Contestant #12</p>
-          </div>
-        </div>
-        <div className="text-right">
-          <p className="font-heading text-sm font-bold text-stone-200">29,940</p>
-          <p className="text-[10px] text-stone-400">Verified Votes</p>
-        </div>
-      </div>
-    </div>
-
-    {/* Live Vote Activity Feed */}
-    <div className="pt-3 border-t border-stone-800 flex items-center justify-between text-[11px] text-stone-400">
-      <span className="flex items-center gap-1.5 text-amber-400">
-        <Activity className="w-3.5 h-3.5" />
-        Live Vote Stream Active
-      </span>
-      <span>Instant Settlement</span>
-    </div>
-
-    {/* Floating Badge */}
-    <div className="absolute top-16 right-6 px-3 py-2 rounded-lg bg-amber-500 text-stone-950 text-xs font-bold shadow-lg flex items-center gap-1.5">
-      <Sparkles className="w-3.5 h-3.5" />
-      <span>+50 Votes Received</span>
-    </div>
-  </div>
-);
+  );
+};
 
 const SmoothTicketVisual: React.FC = () => (
   <div className="w-full h-full p-4 sm:p-6 flex flex-col justify-between bg-stone-900 text-stone-100 rounded-2xl border border-stone-800 shadow-2xl relative overflow-hidden">
@@ -442,7 +391,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
 
                   {/* RIGHT COLUMN: Product Interface Visual (55-60% width -> 7 cols) */}
                   <div className="col-span-7 h-full min-h-[440px] max-h-[600px] w-full p-2">
-                    {activeProduct.visualType === 'smoothballot' ? (
+                    {(activeProduct.visualType === 'smoothballot' || activeProduct.visualType === 'smoothcontest') ? (
                       <div className="w-full h-full">
                         {RENDER_VISUAL(activeProduct.visualType)}
                       </div>
