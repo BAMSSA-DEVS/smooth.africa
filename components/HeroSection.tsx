@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* ─── Left Column ─── */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-8 pt-8 lg:pt-14">
+          <div className="lg:col-span-6 xl:col-span-5 space-y-8 pt-10 lg:pt-20">
 
             {/* Headline */}
             <motion.div
