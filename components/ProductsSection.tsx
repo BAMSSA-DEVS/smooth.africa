@@ -573,7 +573,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
       </div>
 
       {/* ─── ENDING TRANSITION STATEMENT ─── */}
-      <div className="border-t border-stone-200/60 dark:border-stone-800/60 py-16 bg-[#FAFAF9] dark:bg-[#00030E]">
+      <div className="border-t border-stone-200/60 dark:border-stone-800/60 py-8 bg-[#FAFAF9] dark:bg-[#00030E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
