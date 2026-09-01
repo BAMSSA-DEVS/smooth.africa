@@ -222,13 +222,12 @@ export const companyData = {
     },
     {
       id: "member-5",
-      name: "Amina Diallo",
-      role: "Head of Customer Success",
-      bio: "Former operations manager who switched sides. Understands exactly what it's like to depend on systems you can't trust, and ensures our users never have to experience that uncertainty.",
-      image:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
-      linkedin: "#",
-      email: "amina@smooth.africa",
+      name: "Oladejo Jibril",
+      role: "Co-Founder & Product Designer",
+      bio: "Jibril is a Product Designer with a background in Anthropology, combining human behavior and design to create digital experiences that feel intuitive, useful, and genuinely human. His approach is rooted in understanding people, solving real problems, and creating products that work beautifully for both users and businesses.",
+      image: "/images/team/oladejo-jibril.jpg",
+      linkedin: "https://www.linkedin.com/in/oladejo-jibril/",
+      email: "jibril@smooth.africa",
     },
     {
       id: "member-6",
