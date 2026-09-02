@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Saira_Stencil_One } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
@@ -9,11 +9,11 @@ const inter = Inter({
   display: 'swap',
 });
 
-const sairaStencilOne = Saira_Stencil_One({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-saira-stencil',
+  variable: '--font-plus-jakarta',
   display: 'swap',
-  weight: ['400'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${sairaStencilOne.variable} scroll-smooth`}
+      className={`${inter.variable} ${plusJakartaSans.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased bg-[#FAFAF9] dark:bg-[#141414] text-stone-900 dark:text-stone-100 transition-colors duration-300">

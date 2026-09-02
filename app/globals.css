@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --font-saira-stencil: 'Saira Stencil One', cursive, sans-serif;
+    --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
     --font-inter: 'Inter', sans-serif;
 
     --bg-primary: #FAFAF9;
@@ -55,13 +55,14 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-saira-stencil), 'Saira Stencil One', cursive, sans-serif;
+    font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
   }
 }
 
 @layer utilities {
   .font-heading {
-    font-family: var(--font-saira-stencil), 'Saira Stencil One', cursive, sans-serif;
+    font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
   }
 
   /* Subtle dot grid pattern */
