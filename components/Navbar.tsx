@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, ArrowUpRight } from 'lucide-react';
-import { useTheme } from 'next-themes';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavbarProps {
@@ -20,17 +19,12 @@ const navLinks = [
 export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <motion.header
@@ -83,19 +77,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle color theme"
-              className="p-2 rounded-lg text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-[#1C1C1C] transition-all"
-            >
-              {mounted ? (
-                theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />
-              ) : (
-                <div className="w-4 h-4" />
-              )}
-            </button>
-
             {/* CTA — hidden on mobile */}
             <a
               href="mailto:hello@smooth.africa"
