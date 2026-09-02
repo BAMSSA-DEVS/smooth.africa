@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        heading: ['var(--font-plus-jakarta)', '"Plus Jakarta Sans"', 'sans-serif'],
+        heading: ['var(--font-satoshi)', '"Satoshi"', 'sans-serif'],
         sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
       backgroundImage: {
