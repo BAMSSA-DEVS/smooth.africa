@@ -17,6 +17,12 @@ const fadeUp = {
   }),
 };
 
+const heroStats = [
+  { value: '100+', label: 'organizations' },
+  { value: 'Growing', label: 'Across Africa' },
+  { value: '3', label: 'products' },
+];
+
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -135,21 +141,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               initial="hidden"
               animate="visible"
               custom={0.4}
-              className="pt-2 flex items-center gap-4 sm:gap-6 text-sm text-stone-500 dark:text-stone-400 whitespace-nowrap"
+              className="pt-2 text-sm text-stone-500 dark:text-stone-400"
             >
-              <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">100+</span>
-                <span>organizations</span>
+              {/* Mobile marquee */}
+              <div className="sm:hidden -mx-4 overflow-hidden">
+                <div className={`flex w-max items-center gap-6 ${prefersReducedMotion ? '' : 'animate-marquee'}`}>
+                  {[...heroStats, ...heroStats, ...heroStats, ...heroStats].map((s, i) => (
+                    <div key={i} className="flex items-center gap-6 shrink-0 whitespace-nowrap">
+                      <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">{s.value}</span>
+                      <span>{s.label}</span>
+                      <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A] shrink-0" />
-              <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">Growing</span>
-                <span>Across Africa</span>
-              </div>
-              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A] shrink-0" />
-              <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
-                <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">3</span>
-                <span>products</span>
+
+              {/* Desktop static row */}
+              <div className="hidden sm:flex items-center gap-6 whitespace-nowrap">
+                {heroStats.map((s, i) => (
+                  <React.Fragment key={s.value}>
+                    {i > 0 && <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A] shrink-0" />}
+                    <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
+                      <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">{s.value}</span>
+                      <span>{s.label}</span>
+                    </div>
+                  </React.Fragment>
+                ))}
               </div>
             </motion.div>
           </div>
