@@ -17,15 +17,43 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
   const [org, setOrg] = useState('');
   const [product, setProduct] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (name && email) setSubmitted(true);
+    if (!name || !email) return;
+    setSubmitting(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          organization: org,
+          interest: product || 'Not sure yet',
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to submit.');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     onClose();
-    setTimeout(() => setSubmitted(false), 300);
+    setTimeout(() => {
+      setSubmitted(false);
+      setError(null);
+    }, 300);
   };
 
   return (
@@ -164,12 +192,19 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
 
+                {error && (
+                  <p className="text-sm text-red-500 dark:text-red-400 text-center">
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#1258AB] hover:bg-[#0e4489] text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md"
+                  disabled={submitting}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#1258AB] hover:bg-[#0e4489] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md"
                 >
-                  Request Demo
-                  <ArrowRight className="w-4 h-4" />
+                  {submitting ? 'Sending…' : 'Request Demo'}
+                  {!submitting && <ArrowRight className="w-4 h-4" />}
                 </button>
               </form>
             )}
