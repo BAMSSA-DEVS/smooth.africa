@@ -52,13 +52,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
           <img
             src="/hero-bg-light.jpg"
             alt="Africa Map Background Light"
-            className="w-full h-full object-contain object-right dark:hidden"
+            className="w-full h-full object-cover object-center md:object-contain md:object-right dark:hidden"
           />
           {/* Dark mode background */}
           <img
             src="/hero-bg.jpg"
             alt="Africa Map Background Dark"
-            className="w-full h-full object-contain object-right hidden dark:block"
+            className="w-full h-full object-cover object-center md:object-contain md:object-right hidden dark:block"
           />
         </motion.div>
         {/* Gradient overlay to ensure text readability on smaller screens */}
