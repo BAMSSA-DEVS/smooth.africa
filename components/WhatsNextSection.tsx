@@ -25,7 +25,7 @@ export const WhatsNextSection: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.08 }}
         >
-          We're just getting started.
+          Three products today. A lot more to build tomorrow.
         </motion.h2>
 
         <motion.p
@@ -34,7 +34,7 @@ export const WhatsNextSection: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
-          There are still thousands of problems worth solving. We're looking for the ones where thoughtful technology can make the biggest difference.
+          We're constantly exploring new operational challenges across Africa. Some ideas become standalone products, others teach us what to build next.
         </motion.p>
       </div>
     </section>

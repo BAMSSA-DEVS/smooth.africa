@@ -95,7 +95,7 @@ export const StorySection: React.FC = () => {
             >
               {[
                 { num: '2023', label: 'Founded' },
-                { num: 'Lagos', label: 'Headquarters' },
+                { num: '15,000+', label: 'Users served' },
                 { num: '3+', label: 'Years building' },
                 { num: '2', label: 'Core products' },
               ].map((item, i) => (

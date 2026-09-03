@@ -70,7 +70,7 @@ export const companyData = {
       "But participation is only as strong as the system behind it. When the process isn't transparent, people question the outcome. When information isn't secure, people lose confidence. When systems are complicated or unreliable, participation itself becomes harder.",
       "That is where Smooth Africa began. We came together around a simple belief: people should be able to participate without having to question the system they're participating through.",
       "So we started building technology around three things we believe should never be compromised: Transparency. Trust. Security.",
-      "Today, Smooth Africa is building participation infrastructure — digital products that make it easier for people and organizations to participate, transact, decide, and engage with confidence.",
+      "Today, Smooth Africa is building participation infrastructure, digital products that make it easier for people and organizations to participate, transact, decide, and engage with confidence.",
       "Our products may serve different experiences, but they are connected by the same idea: Make participation smooth, seamless, and reliable. And we're only getting started."
     ],
   },
@@ -196,8 +196,8 @@ export const companyData = {
     {
       id: "founder-2",
       name: "Owoade Anuoluwapo",
-      role: "Co-founder and CTO",
-      bio: "A Software Engineer with five years of experience in building intuitive web applications with technologies like Typescript, React.Js and Node.Js. Has a track record of exceeding goals and paying close attention to details as well as experience working remotely and cooperating with engineering teams.",
+      role: "Co-founder & Tech Lead",
+      bio: "Owoade leads the engineering team behind Smooth Africa's products, helping turn the company's vision for trusted participation into the systems people actually use. He guides the architecture and delivery of all products.",
       image: "/images/team/owoade-anuoluwapo.jpg",
       linkedin: "https://www.linkedin.com/in/owoade-anuoluwapo-a09a03235/",
       email: "owoade@smooth.africa",
@@ -206,7 +206,7 @@ export const companyData = {
       id: "member-3",
       name: "Ilerioluwa Adebayo",
       role: "Co-founder & Design Lead",
-      bio: "Ileri is a product designer and entrepreneur with a strong focus on creating intentional, user-centered digital experiences. Since 2022, she has designed and shipped end-to-end products, led design for early-stage startups, and transformed complex ideas into clear, scalable solutions. Her approach combines creativity, experimentation, and a deep commitment to clarity, speed, and frictionless product experiences.",
+      bio: "Ileri leads the design team behind Smooth Africa's products, helping turn the company's vision for trusted participation into experiences people find clear and effortless to use. She guides the design direction and product experience of all products.",
       image: "/images/team/ilerioluwa-adebayo.jpg",
       linkedin: "https://www.linkedin.com/in/ilerioluwaadebayo/",
       email: "ileri@smooth.africa",
@@ -214,8 +214,8 @@ export const companyData = {
     {
       id: "member-4",
       name: "Oluwafemi Araoye",
-      role: "Co-Founder & Frontend Engineer",
-      bio: "Front-End Developer with 5+ years of experience building responsive and user-friendly web and mobile interfaces for startups, nonprofits, and enterprises across Africa, Europe, and the UK. Skilled in crafting high-performance front-end solutions using React, Next.js, and Tailwind CSS, with a focus on enhancing user experience. Adept at collaborating with cross-functional teams to deliver engaging and efficient applications that drive business growth.",
+      role: "Co-Founder & Software Engineer",
+      bio: "Femi builds the administrative applications that event organizers, election management teams, and contest organizers rely on to run participation smoothly. He helps turn the company's vision for trusted participation into the tools operators use behind the scenes.",
       image: "/images/team/oluwafemi-araoye.jpg",
       linkedin: "https://www.linkedin.com/in/oluwafemiaraoye/",
       email: "femi@smooth.africa",
@@ -224,7 +224,7 @@ export const companyData = {
       id: "member-5",
       name: "Oladejo Jibril",
       role: "Co-Founder & Product Designer",
-      bio: "Jibril is a Product Designer with a background in Anthropology, combining human behavior and design to create digital experiences that feel intuitive, useful, and genuinely human. His approach is rooted in understanding people, solving real problems, and creating products that work beautifully for both users and businesses.",
+      bio: "Jibril's design work runs across every Smooth Africa product. Whatever needs designing, he gets it done, from first sketch to final screen, keeping every product consistent and human.",
       image: "/images/team/oladejo-jibril.jpg",
       linkedin: "https://www.linkedin.com/in/oladejo-jibril/",
       email: "jibril@smooth.africa",
@@ -232,8 +232,8 @@ export const companyData = {
     {
       id: "member-6",
       name: "Samuel Ibitoye",
-      role: "Co-founder & Frontend Lead",
-      bio: "Samuel is a Frontend Software Engineer focused on building modern, responsive, and high-performance web applications. His expertise spans React, Next.js, TypeScript, JavaScript, Tailwind CSS, and REST APIs, with experience across fintech, e-commerce, logistics, and digital voting platforms. He specializes in creating scalable interfaces, integrating APIs, optimizing performance, and turning complex requirements into seamless digital experiences.",
+      role: "Co-founder & Software Engineer",
+      bio: "Samuel builds the apps people actually touch, the voter casting a ballot, the attendee walking into an event. His work is where Smooth Africa's promise of trusted participation becomes something people feel: simple, fast, and real.",
       image: "/images/team/samuel-ibitoye.jpg",
       linkedin: "https://www.linkedin.com/in/samuel-ibitoye-328850420/",
       email: "samuel@smooth.africa",
@@ -243,11 +243,11 @@ export const companyData = {
   gallery: [
     {
       id: "g1",
-      title: "Award Recognition",
-      category: "events" as const,
-      categoryLabel: "Events",
+      title: "Smooth Contest Payout Milestone",
+      category: "milestones" as const,
+      categoryLabel: "Milestones",
       imageUrl: "/gallery/img1.jpg",
-      description: "Receiving recognition for our impact in the tech space.",
+      description: "Celebrating the disbursement of over N2,000,000 via Smooth contests.",
     },
     {
       id: "g2",
@@ -264,15 +264,6 @@ export const companyData = {
       categoryLabel: "Team",
       imageUrl: "/gallery/img3.jpg",
       description: "The team unwinding and sharing ideas over drinks.",
-    },
-
-    {
-      id: "g5",
-      title: "Milestone Celebration",
-      category: "milestones" as const,
-      categoryLabel: "Milestones",
-      imageUrl: "/gallery/img5.jpg",
-      description: "Celebrating the disbursement of over N2,000,000 via Smooth contests.",
     },
     {
       id: "g6",
@@ -320,7 +311,7 @@ export const companyData = {
   metrics: [
     { id: "m1", label: "Products Built", value: 3, suffix: "" },
     { id: "m2", label: "Organizations Served", value: 100, suffix: "+" },
-    { id: "m4", label: "Active Users", value: 15000, suffix: "+" },
+    { id: "m4", label: "Users Served", value: 15000, suffix: "+" },
     { id: "m6", label: "Years Building", value: 3, suffix: "+" },
   ] as MetricItem[],
 

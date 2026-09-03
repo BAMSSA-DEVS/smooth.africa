@@ -53,7 +53,7 @@ const SHOWCASE_PRODUCTS: ShowcaseProductData[] = [
       'Real-time results',
     ],
     ctaText: 'Explore SmoothBallot',
-    href: 'https://smoothballot.com/',
+    href: 'https://www.smoothballot.com/elections',
     isExternal: true,
     color: 'blue',
     badge: 'Live System',
@@ -72,8 +72,8 @@ const SHOWCASE_PRODUCTS: ShowcaseProductData[] = [
       'Live leaderboards',
     ],
     ctaText: 'Explore SmoothContest',
-    href: '#',
-    isExternal: false,
+    href: 'https://www.smoothballot.com/contests',
+    isExternal: true,
     color: 'amber',
     badge: 'Live System',
     visualType: 'smoothcontest',
@@ -124,7 +124,7 @@ const SmoothBallotVisual: React.FC = () => {
           }}
         >
           <Image
-            src="/images/products/smoothballot-final-mockup.png"
+            src="/images/products/smooth-elections.webp"
             alt="SmoothBallot digital election management platform"
             width={1600}
             height={1200}
@@ -163,7 +163,7 @@ const SmoothContestVisual: React.FC = () => {
           }}
         >
           <Image
-            src="/images/products/smoothcontest-final-mockup.png"
+            src="/images/products/contest-hero.webp"
             alt="SmoothContest digital contest management platform"
             width={1600}
             height={1200}
@@ -202,7 +202,7 @@ const SmoothTicketVisual: React.FC = () => {
           }}
         >
           <Image
-            src="/images/products/smoothticket-final-mockup.png"
+            src="/images/products/ticket.png"
             alt="SmoothTicket digital ticketing and event management platform"
             width={1600}
             height={1200}
@@ -274,7 +274,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
             Different products. One belief.
           </h2>
           <p className="mt-4 text-stone-500 dark:text-stone-400 text-lg leading-relaxed max-w-2xl">
-            We build focused digital products around the moments where participation matters — making experiences more transparent, secure, seamless, and reliable.
+            We build focused digital products around the moments where participation matters, making experiences more transparent, secure, seamless, and reliable.
           </p>
         </motion.div>
       </div>
@@ -510,7 +510,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onSelectProduc
               Three products today. A lot more to build tomorrow.
             </h4>
             <p className="text-stone-500 dark:text-stone-400 text-base leading-relaxed">
-              We're constantly exploring new operational challenges across Africa. Some ideas become standalone products — others teach us what to build next.
+              We're constantly exploring new operational challenges across Africa. Some ideas become standalone products, others teach us what to build next.
             </p>
           </motion.div>
         </div>

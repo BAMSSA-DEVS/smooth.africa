@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowUpRight, Copy, Check, MapPin } from 'lucide-react';
+import { ArrowUpRight, Copy, Check } from 'lucide-react';
 
 interface ContactSectionProps {
   onOpenDemoModal: () => void;
@@ -80,11 +80,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenDemoModal 
             
             {/* Meta Details */}
             <div className="flex flex-wrap items-center gap-6 text-xs text-stone-400">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-stone-500" />
-                <span>Headquarters: Lagos, Nigeria</span>
-              </div>
-              <div className="hidden sm:block w-px h-3.5 bg-[#101524]" />
               <div className="hidden sm:flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                 <span>Response time: &lt; 24 hrs</span>

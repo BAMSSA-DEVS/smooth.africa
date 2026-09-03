@@ -1,30 +1,26 @@
 'use client';
 
 import React from 'react';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Twitter } from 'lucide-react';
 
 const footerLinks = {
   Company: [
     { label: 'About', href: '#story' },
     { label: 'Team', href: '#team' },
     { label: 'Gallery', href: '#gallery' },
-    { label: 'Careers', href: '#' },
   ],
   Products: [
     { label: 'SmoothBallot', href: '#products' },
+    { label: 'SmoothContest', href: '#products' },
     { label: 'SmoothTicket', href: '#products' },
-    { label: 'Coming Soon', href: '#products' },
   ],
   Resources: [
-    { label: 'Blog', href: '#' },
-    { label: 'Documentation', href: '#' },
-    { label: 'Support', href: '#' },
-    { label: 'Status', href: '#' },
+    { label: 'Blog', href: 'https://www.smoothballot.com/blog' },
+    { label: 'Support', href: 'mailto:support@smooth.africa' },
   ],
   Legal: [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Cookie Policy', href: '#' },
+    { label: 'Privacy Policy', href: 'https://www.smoothballot.com/privacy' },
+    { label: 'Terms of Service', href: 'https://www.smoothballot.com/terms' },
   ],
 };
 
@@ -61,19 +57,23 @@ export const Footer: React.FC = () => {
             {/* Social */}
             <div className="flex items-center gap-2">
               {[
-                { Icon: Twitter, label: 'Twitter', href: '#' },
-                { Icon: Linkedin, label: 'LinkedIn', href: '#' },
-                { Icon: Github, label: 'GitHub', href: '#' },
-              ].map(({ Icon, label, href }) => (
+                { Icon: Twitter, label: 'Twitter', href: 'https://x.com/SmoothBallot' },
+                { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/smooth-ballot/?originalSubdomain=ng' },
+              ].map(({ Icon, label, href }) => {
+                const isExternal = href.startsWith('http');
+                return (
                 <a
                   key={label}
                   href={href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
                   aria-label={label}
                   className="p-2 rounded-lg text-stone-400 dark:text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 hover:bg-stone-100 dark:hover:bg-[#2A2A2A] border border-transparent hover:border-stone-200 dark:hover:border-[#3A3A3A] transition-all"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -85,16 +85,21 @@ export const Footer: React.FC = () => {
                   {category}
                 </h4>
                 <ul className="space-y-2.5">
-                  {links.map((link) => (
+                  {links.map((link) => {
+                    const isExternal = link.href.startsWith('http');
+                    return (
                     <li key={link.label}>
                       <a
                         href={link.href}
+                        target={isExternal ? '_blank' : undefined}
+                        rel={isExternal ? 'noopener noreferrer' : undefined}
                         className="text-sm text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
                       >
                         {link.label}
                       </a>
                     </li>
-                  ))}
+                    );
+                  })}
                 </ul>
               </div>
             ))}

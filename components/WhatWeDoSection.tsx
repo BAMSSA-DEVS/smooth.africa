@@ -38,7 +38,7 @@ export const WhatWeDoSection: React.FC = () => {
             We build infrastructure for participation.
           </h2>
           <p className="mt-6 text-stone-500 dark:text-stone-400 text-lg md:text-xl leading-relaxed">
-            Smooth Africa creates digital products that make participation more transparent, secure, and reliable — helping people and organizations engage with confidence.
+            Smooth Africa creates digital products that make participation more transparent, secure, and reliable, helping people and organizations engage with confidence.
           </p>
         </motion.div>
 

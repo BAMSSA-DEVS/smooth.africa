@@ -31,7 +31,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
   
   // Use a fallback for reduced motion
   const motionBackgroundY = prefersReducedMotion ? 0 : backgroundY;
-  const motionScale = prefersReducedMotion ? 1 : 1.15;
+  const motionScale = prefersReducedMotion ? 1 : 1.05;
   
   const dot1Y = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [0, -80]);
   const dot2Y = prefersReducedMotion ? 0 : useTransform(scrollYProgress, [0, 1], [0, -40]);
@@ -49,16 +49,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
           style={{ y: motionBackgroundY, scale: motionScale }}
         >
           {/* Light mode background */}
-          <img 
-            src="/hero-bg-light.jpg" 
-            alt="Africa Map Background Light" 
-            className="w-full h-full object-cover object-right dark:hidden"
+          <img
+            src="/hero-bg-light.jpg"
+            alt="Africa Map Background Light"
+            className="w-full h-full object-contain object-right dark:hidden"
           />
           {/* Dark mode background */}
-          <img 
-            src="/hero-bg.jpg" 
-            alt="Africa Map Background Dark" 
-            className="w-full h-full object-cover object-right hidden dark:block"
+          <img
+            src="/hero-bg.jpg"
+            alt="Africa Map Background Dark"
+            className="w-full h-full object-contain object-right hidden dark:block"
           />
         </motion.div>
         {/* Gradient overlay to ensure text readability on smaller screens */}
@@ -135,19 +135,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemoModal }) => 
               initial="hidden"
               animate="visible"
               custom={0.4}
-              className="pt-2 flex items-center gap-6 text-sm text-stone-500 dark:text-stone-400"
+              className="pt-2 flex items-center gap-4 sm:gap-6 text-sm text-stone-500 dark:text-stone-400 whitespace-nowrap"
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
                 <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">100+</span>
                 <span>organizations</span>
               </div>
-              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
-              <div className="flex items-center gap-2">
+              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A] shrink-0" />
+              <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
                 <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">Growing</span>
                 <span>Across Africa</span>
               </div>
-              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A]" />
-              <div className="flex items-center gap-2">
+              <div className="w-px h-5 bg-stone-200 dark:bg-[#2A2A2A] shrink-0" />
+              <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
                 <span className="font-heading font-bold text-stone-900 dark:text-stone-100 text-lg">3</span>
                 <span>products</span>
               </div>
