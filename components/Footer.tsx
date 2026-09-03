@@ -111,8 +111,22 @@ export const Footer: React.FC = () => {
           <p className="text-xs text-stone-400 dark:text-stone-500">
             © {new Date().getFullYear()} Smooth Africa. All rights reserved.
           </p>
-          <p className="text-xs text-stone-400 dark:text-stone-500">
-            Designed &amp; built in Lagos, Nigeria 🇳🇬
+          <p className="text-xs text-stone-400 dark:text-stone-500 flex items-center gap-1.5">
+            Designed and built with love for Africa
+            <span
+              aria-hidden="true"
+              className="inline-block w-3.5 h-3.5 bg-[#1258AB]"
+              style={{
+                maskImage: 'url(/africa.png)',
+                WebkitMaskImage: 'url(/africa.png)',
+                maskSize: 'contain',
+                WebkitMaskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                WebkitMaskRepeat: 'no-repeat',
+                maskPosition: 'center',
+                WebkitMaskPosition: 'center',
+              }}
+            />
           </p>
         </div>
       </div>
